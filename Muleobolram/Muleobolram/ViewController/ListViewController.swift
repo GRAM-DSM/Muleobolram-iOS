@@ -1,29 +1,33 @@
 //
-//  CommentViewController.swift
+//  ListViewController.swift
 //  Muleobolram
 //
-//  Created by 김기영 on 2021/07/13.
+//  Created by 김기영 on 2021/07/14.
 //
 
 import UIKit
 
-class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tableView : UITableView!
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
     }
-    
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        <#code#>
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

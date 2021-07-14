@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		380548E02697170D0051399A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380548DF2697170D0051399A /* Header.swift */; };
 		380548E2269717330051399A /* httpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380548E1269717330051399A /* httpClient.swift */; };
+		38363029269EEEBA00C17C01 /* CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38363028269EEEBA00C17C01 /* CommentAPI.swift */; };
+		3836302B269EF09400C17C01 /* ListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3836302A269EF09400C17C01 /* ListAPI.swift */; };
 		3859AFEA269AFD8100CB6A71 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3859AFE9269AFD8100CB6A71 /* NanumGothicBold.otf */; };
 		3859AFEC269B245B00CB6A71 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859AFEB269B245B00CB6A71 /* SignupViewController.swift */; };
 		38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABD1A926971034004648B6 /* AppDelegate.swift */; };
@@ -18,19 +20,20 @@
 		38ABD1B626971037004648B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38ABD1B426971037004648B6 /* LaunchScreen.storyboard */; };
 		38C7FC51269D9819002B8AE7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC4F269D9819002B8AE7 /* TableViewCell.swift */; };
 		38C7FC52269D9819002B8AE7 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FC50269D9819002B8AE7 /* TableViewCell.xib */; };
-		38C7FC54269D9D54002B8AE7 /* CommunityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC53269D9D54002B8AE7 /* CommunityTableViewController.swift */; };
 		38C7FC56269D9D8B002B8AE7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC55269D9D8B002B8AE7 /* AddViewController.swift */; };
 		38C7FC58269D9DA8002B8AE7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */; };
 		38C7FC5A269D9F49002B8AE7 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC59269D9F49002B8AE7 /* AuthAPI.swift */; };
 		38C7FC5C269D9FA6002B8AE7 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */; };
-		38D1E22D2699F547004728A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E22C2699F547004728A3 /* ViewController.swift */; };
-		38D1E2362699F964004728A3 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E2352699F964004728A3 /* UI.swift */; };
+		38C7FC5E269E7D1A002B8AE7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */; };
+		38D1E22D2699F547004728A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E22C2699F547004728A3 /* LoginViewController.swift */; };
 		B913A620EB61848C061BE692 /* Pods_Muleobolram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		380548DF2697170D0051399A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		380548E1269717330051399A /* httpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpClient.swift; sourceTree = "<group>"; };
+		38363028269EEEBA00C17C01 /* CommentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAPI.swift; sourceTree = "<group>"; };
+		3836302A269EF09400C17C01 /* ListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAPI.swift; sourceTree = "<group>"; };
 		3859AFE9269AFD8100CB6A71 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = "../../../../../Downloads/나눔고딕/NanumGothicBold.otf"; sourceTree = "<group>"; };
 		3859AFEB269B245B00CB6A71 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		38ABD1A626971034004648B6 /* Muleobolram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muleobolram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,13 +45,12 @@
 		38ABD1B726971037004648B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C7FC4F269D9819002B8AE7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		38C7FC50269D9819002B8AE7 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		38C7FC53269D9D54002B8AE7 /* CommunityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewController.swift; sourceTree = "<group>"; };
 		38C7FC55269D9D8B002B8AE7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		38C7FC59269D9F49002B8AE7 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
-		38D1E22C2699F547004728A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		38D1E2352699F964004728A3 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		38D1E22C2699F547004728A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muleobolram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ABD951F5EAF37179635646 /* Pods-Muleobolram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muleobolram.debug.xcconfig"; path = "Target Support Files/Pods-Muleobolram/Pods-Muleobolram.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8F1A39A9D42D75A7BECF52 /* Pods-Muleobolram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muleobolram.release.xcconfig"; path = "Target Support Files/Pods-Muleobolram/Pods-Muleobolram.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,11 +89,11 @@
 		380548DA269716100051399A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				38D1E22C2699F547004728A3 /* ViewController.swift */,
+				38D1E22C2699F547004728A3 /* LoginViewController.swift */,
 				3859AFEB269B245B00CB6A71 /* SignupViewController.swift */,
-				38C7FC53269D9D54002B8AE7 /* CommunityTableViewController.swift */,
 				38C7FC55269D9D8B002B8AE7 /* AddViewController.swift */,
 				38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */,
+				38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -100,9 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				38ABD1AF26971034004648B6 /* Main.storyboard */,
-				38D1E2352699F964004728A3 /* UI.swift */,
-				38C7FC4F269D9819002B8AE7 /* TableViewCell.swift */,
-				38C7FC50269D9819002B8AE7 /* TableViewCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -112,6 +111,8 @@
 			children = (
 				38C7FC59269D9F49002B8AE7 /* AuthAPI.swift */,
 				38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */,
+				38363028269EEEBA00C17C01 /* CommentAPI.swift */,
+				3836302A269EF09400C17C01 /* ListAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -130,6 +131,22 @@
 				380548DF2697170D0051399A /* Header.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		3836302C269EF41600C17C01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3836302D269EF74200C17C01 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38C7FC50269D9819002B8AE7 /* TableViewCell.xib */,
+				38C7FC4F269D9819002B8AE7 /* TableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		38ABD19D26971034004648B6 = {
@@ -153,7 +170,9 @@
 		38ABD1A826971034004648B6 /* Muleobolram */ = {
 			isa = PBXGroup;
 			children = (
+				3836302C269EF41600C17C01 /* Model */,
 				380548DA269716100051399A /* ViewController */,
+				3836302D269EF74200C17C01 /* Cell */,
 				380548DB2697162D0051399A /* UI */,
 				380548D9269715F60051399A /* Networking */,
 				38ABD1A926971034004648B6 /* AppDelegate.swift */,
@@ -291,18 +310,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3836302B269EF09400C17C01 /* ListAPI.swift in Sources */,
 				38C7FC56269D9D8B002B8AE7 /* AddViewController.swift in Sources */,
-				38D1E22D2699F547004728A3 /* ViewController.swift in Sources */,
+				38D1E22D2699F547004728A3 /* LoginViewController.swift in Sources */,
 				38C7FC51269D9819002B8AE7 /* TableViewCell.swift in Sources */,
 				3859AFEC269B245B00CB6A71 /* SignupViewController.swift in Sources */,
 				38C7FC5C269D9FA6002B8AE7 /* APIProvider.swift in Sources */,
 				38C7FC5A269D9F49002B8AE7 /* AuthAPI.swift in Sources */,
-				38C7FC54269D9D54002B8AE7 /* CommunityTableViewController.swift in Sources */,
 				380548E02697170D0051399A /* Header.swift in Sources */,
 				380548E2269717330051399A /* httpClient.swift in Sources */,
 				38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */,
 				38ABD1AC26971034004648B6 /* SceneDelegate.swift in Sources */,
-				38D1E2362699F964004728A3 /* UI.swift in Sources */,
+				38C7FC5E269E7D1A002B8AE7 /* ListViewController.swift in Sources */,
+				38363029269EEEBA00C17C01 /* CommentAPI.swift in Sources */,
 				38C7FC58269D9DA8002B8AE7 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

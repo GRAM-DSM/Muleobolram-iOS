@@ -8,15 +8,15 @@
 import Foundation
 
 enum AuthAPI : API {
-    case Login
-    case SignUp
+    case login //signIn login
+    case signUp // signUp
     
     func path() -> String {
         switch self {
-        case .Login:
-            return "/Login"
-        case .SignUp:
-            return "/Singup"
+        case .login:
+            return "/login"
+        case .signUp:
+            return "/singup"
         }
     }
     

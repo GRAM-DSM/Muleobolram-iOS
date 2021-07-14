@@ -16,9 +16,6 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        view.layer.cornerRadius = 40
-        view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 2
         
     }
 

@@ -12,9 +12,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var idTxt : UITextField!
     @IBOutlet weak var psTxt : UITextField!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        //idTxt.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view
         
     }
