@@ -124,6 +124,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="didLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvu-PN-zeH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf6-TL-3Xw">
                                 <rect key="frame" x="100" y="692" width="132" height="18"/>
@@ -234,7 +237,7 @@
         <!--회원가입-->
         <scene sceneID="dOb-Ka-T6z">
             <objects>
-                <viewController id="HwB-Sl-tLs" customClass="SignupViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HwB-Sl-tLs" customClass="SignupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9gU-6A-X9n" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -21,13 +21,25 @@ struct Token {
             _token = UserDefaults.standard.string(forKey: "token")
         }
     }
+    
+    static var _refrsehToken : String?
+    static var refreshToken : String?{
+        get {
+            _refrsehToken = UserDefaults.standard.string(forKey: "refreshToken")
+            return _refrsehToken
+        }
+        set(newRefreshToken) {
+            UserDefaults.standard.setValue(newRefreshToken, forKey: "refreshToken")
+            _refrsehToken = UserDefaults.standard.string(forKey: "refreshToken")
+        }
+    }
     static func tokenRemove(){
         token = nil
     }
 }
 
 enum Header {
-    case token, tokenIsEmpty
+    case token, tokenIsEmpty, refreshToken
     
     func header() -> HTTPHeaders {
         
@@ -35,9 +47,17 @@ enum Header {
             return ["Content-Type" : "application/json"]
         }
         
+        guard let refreshToken = Token.refreshToken else {
+            return ["Content-Type" : "application/json"]
+        }
+        
         switch self {
         case .token:
             return HTTPHeaders(["Authorization" : "Bearer " + token, "Content-Type" : "application/json"])
+            
+        case .refreshToken :
+            return HTTPHeaders(["Authorization" : "Bearer " + token, "Content-Type" : "application/json"])
+            
         case .tokenIsEmpty:
             return ["Content-Type" : "application/json"]
         }
