@@ -10,6 +10,7 @@ import Foundation
 enum AuthAPI : API {
     case login //signIn login
     case signUp // signUp
+    case auth
     
     func path() -> String {
         switch self {
@@ -17,6 +18,8 @@ enum AuthAPI : API {
             return "/login"
         case .signUp:
             return "/singup"
+        case .auth :
+            return "/auth"
         }
     }
     
