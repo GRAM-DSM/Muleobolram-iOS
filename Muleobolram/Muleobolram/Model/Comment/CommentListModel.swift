@@ -8,7 +8,11 @@
 import Foundation
 
 struct CommentListModel : Codable {
-    var name : String
-    var commentData : String
+    var name = String()
+    var commentData = String()
     
+    init(name : String, commentData : String) {
+        self.name = name
+        self.commentData = commentData
+    }
 }

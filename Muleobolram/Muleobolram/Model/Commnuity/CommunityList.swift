@@ -10,9 +10,11 @@ import Foundation
 struct Section : Codable {
     var myName = String()
     var title = String()
+    var id = Int()
     
-    init(myName : String, title : String) {
+    init(myName : String, title : String, id : Int) {
         self.myName = myName
         self.title = title
+        self.id = id
     }
 }

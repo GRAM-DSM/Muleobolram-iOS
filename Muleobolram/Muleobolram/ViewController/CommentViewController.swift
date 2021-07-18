@@ -9,6 +9,11 @@ import UIKit
 
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak private var titleTxt : UILabel!
+    @IBOutlet weak private var contentTxt : UITextView!
+    @IBOutlet weak private var commentList : UITableView!
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
     }

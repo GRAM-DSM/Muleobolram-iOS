@@ -18,7 +18,8 @@
 		387C09EC269FF6430061606D /* CommentResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09EB269FF6430061606D /* CommentResonse.swift */; };
 		387C09F126A020960061606D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09EF26A020960061606D /* CommentTableViewCell.swift */; };
 		387C09F226A020960061606D /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387C09F026A020960061606D /* CommentTableViewCell.xib */; };
-		387C09F526A2EEB70061606D /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09F426A2EEB70061606D /* Community.swift */; };
+		387C09F526A2EEB70061606D /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09F426A2EEB70061606D /* CommunityList.swift */; };
+		387C09F826A430880061606D /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09F726A430880061606D /* Add.swift */; };
 		38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABD1A926971034004648B6 /* AppDelegate.swift */; };
 		38ABD1AC26971034004648B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABD1AB26971034004648B6 /* SceneDelegate.swift */; };
 		38ABD1B126971034004648B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38ABD1AF26971034004648B6 /* Main.storyboard */; };
@@ -30,7 +31,7 @@
 		38C7FC58269D9DA8002B8AE7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */; };
 		38C7FC5A269D9F49002B8AE7 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC59269D9F49002B8AE7 /* AuthAPI.swift */; };
 		38C7FC5C269D9FA6002B8AE7 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */; };
-		38C7FC5E269E7D1A002B8AE7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */; };
+		38C7FC5E269E7D1A002B8AE7 /* CommunityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5D269E7D1A002B8AE7 /* CommunityListViewController.swift */; };
 		38D1E22D2699F547004728A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E22C2699F547004728A3 /* LoginViewController.swift */; };
 		B913A620EB61848C061BE692 /* Pods_Muleobolram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +48,8 @@
 		387C09EB269FF6430061606D /* CommentResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentResonse.swift; sourceTree = "<group>"; };
 		387C09EF26A020960061606D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		387C09F026A020960061606D /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
-		387C09F426A2EEB70061606D /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
+		387C09F426A2EEB70061606D /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
+		387C09F726A430880061606D /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		38ABD1A626971034004648B6 /* Muleobolram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muleobolram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38ABD1A926971034004648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38ABD1AB26971034004648B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		38C7FC59269D9F49002B8AE7 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
-		38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		38C7FC5D269E7D1A002B8AE7 /* CommunityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityListViewController.swift; sourceTree = "<group>"; };
 		38D1E22C2699F547004728A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muleobolram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ABD951F5EAF37179635646 /* Pods-Muleobolram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muleobolram.debug.xcconfig"; path = "Target Support Files/Pods-Muleobolram/Pods-Muleobolram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 				3859AFEB269B245B00CB6A71 /* SignupViewController.swift */,
 				38C7FC55269D9D8B002B8AE7 /* AddViewController.swift */,
 				38C7FC57269D9DA8002B8AE7 /* CommentViewController.swift */,
-				38C7FC5D269E7D1A002B8AE7 /* ListViewController.swift */,
+				38C7FC5D269E7D1A002B8AE7 /* CommunityListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 		3836302C269EF41600C17C01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				387C09F626A430720061606D /* AddList */,
 				387C09F326A2EEA10061606D /* Commnuity */,
 				387C09E8269FF6060061606D /* Comment */,
 				38363030269EFB6700C17C01 /* Auth */,
@@ -186,9 +189,17 @@
 		387C09F326A2EEA10061606D /* Commnuity */ = {
 			isa = PBXGroup;
 			children = (
-				387C09F426A2EEB70061606D /* Community.swift */,
+				387C09F426A2EEB70061606D /* CommunityList.swift */,
 			);
 			path = Commnuity;
+			sourceTree = "<group>";
+		};
+		387C09F626A430720061606D /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				387C09F726A430880061606D /* Add.swift */,
+			);
+			path = AddList;
 			sourceTree = "<group>";
 		};
 		38ABD19D26971034004648B6 = {
@@ -355,7 +366,7 @@
 			files = (
 				3836302B269EF09400C17C01 /* ListAPI.swift in Sources */,
 				387C09EA269FF6220061606D /* CommentListModel.swift in Sources */,
-				387C09F526A2EEB70061606D /* Community.swift in Sources */,
+				387C09F526A2EEB70061606D /* CommunityList.swift in Sources */,
 				38C7FC56269D9D8B002B8AE7 /* AddViewController.swift in Sources */,
 				38363032269EFB7D00C17C01 /* SignInModel.swift in Sources */,
 				38D1E22D2699F547004728A3 /* LoginViewController.swift in Sources */,
@@ -366,10 +377,11 @@
 				38C7FC5A269D9F49002B8AE7 /* AuthAPI.swift in Sources */,
 				380548E02697170D0051399A /* Header.swift in Sources */,
 				380548E2269717330051399A /* httpClient.swift in Sources */,
+				387C09F826A430880061606D /* Add.swift in Sources */,
 				38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */,
 				387C09F126A020960061606D /* CommentTableViewCell.swift in Sources */,
 				38ABD1AC26971034004648B6 /* SceneDelegate.swift in Sources */,
-				38C7FC5E269E7D1A002B8AE7 /* ListViewController.swift in Sources */,
+				38C7FC5E269E7D1A002B8AE7 /* CommunityListViewController.swift in Sources */,
 				38363029269EEEBA00C17C01 /* CommentAPI.swift in Sources */,
 				38C7FC58269D9DA8002B8AE7 /* CommentViewController.swift in Sources */,
 			);

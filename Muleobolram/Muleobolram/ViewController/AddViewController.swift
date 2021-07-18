@@ -8,10 +8,12 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
+    
+    @IBOutlet weak private var titleTxt : UITextField!
+    @IBOutlet weak private var contentTxt : UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

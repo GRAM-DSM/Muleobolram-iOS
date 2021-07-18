@@ -35,7 +35,7 @@ class LoginViewController: UIViewController{
         let httpClient : HTTPClient
         httpClient.post(url: AuthAPI.login.path(), params: ["id" : id, "password" : password], header: Header.tokenIsEmpty.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode {
-            case 200 :
+            case 201 :
                 do {
                     print("okay")
                     guard let data = res.data else {
@@ -55,6 +55,9 @@ class LoginViewController: UIViewController{
                 catch {
                     print("Error \(error)")
                 }
+            case 400 :
+                print("body 요청이 잘못됨")
+                self.failetxt.isHidden = false
             case 404 :
                 print("not found id, password")
                 self.failetxt.isHidden = false  // 404가 뜨면 failtext는 화면에 나타남

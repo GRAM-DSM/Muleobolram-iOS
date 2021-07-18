@@ -29,9 +29,23 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let nibName = UINib(nibName: "TableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "Cell")
     }
 
-
+    private func getList(){
+        let http : HTTPClient
+        http.get(url: ListAPI.seeList().path(), params: nil, header: Header.acesstoken.header()).responseJSON{ (response) in
+            switch response.response?.statusCode{
+            case 200 :
+                
+            case 401 :
+                
+            case 404 :
+                print("not found")
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

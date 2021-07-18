@@ -8,17 +8,17 @@
 import Foundation
 
 enum ListAPI : API {
-    case List
-    case ListDelete(_ id : Int)
-    case SeeList(_ id : Int)
+    case listWrite
+    case listDelete(_ id : Int)
+    case seeList(_ id : Int)
     
     func path() -> String {
         switch self {
-        case .List:
+        case .listWrite:
             return "/post"
-        case .ListDelete(let id) :
+        case .listDelete(let id) :
             return "/post/\(id)"
-        case .SeeList(let id) :
+        case .seeList(let id) :
             return "/post/\(id)"
         }
     }

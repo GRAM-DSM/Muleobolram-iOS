@@ -390,7 +390,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.cornerRadius" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
@@ -479,7 +481,7 @@
         <!--추가하기-->
         <scene sceneID="jXS-E8-Wh8">
             <objects>
-                <viewController id="LwS-Id-naw" customClass="SignupViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LwS-Id-naw" customClass="AddViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MQn-uw-B3j" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,6 +497,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -530,15 +535,19 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTxt" destination="QJx-Hi-I3S" id="w16-O0-GRx"/>
+                        <outlet property="titleTxt" destination="t1u-ML-PgP" id="XZo-cF-A6F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHj-iF-UGg" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2565" y="-643"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="Kkt-1K-xGe">
             <objects>
-                <viewController id="CbR-It-zrr" customClass="SignupViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CbR-It-zrr" customClass="CommentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FH5-bj-e45" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -570,7 +579,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.borderWidth" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MZ-0LE">
@@ -614,6 +625,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v1G-hP-2ZI"/>
+                    <connections>
+                        <outlet property="commentList" destination="RsP-8p-5r7" id="0s3-RD-2W0"/>
+                        <outlet property="contentTxt" destination="yPi-xx-SNz" id="nZk-07-F7Y"/>
+                        <outlet property="titleTxt" destination="pM4-s0-WIy" id="ztj-Cd-oQQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Zf-vi-BLd" sceneMemberID="firstResponder"/>
             </objects>
