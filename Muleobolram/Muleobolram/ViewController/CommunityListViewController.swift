@@ -11,9 +11,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView : UITableView!
     
+    private var communityModel = CommunityList()
+    private var community = [Community]()
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return communityModel.communityResponse.count
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -21,10 +25,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+            
+        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].myName
+        cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
+        
+        return cell
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC") as? CommentViewController else {return}
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +47,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     private func getList(){
         let http : HTTPClient
-        http.get(url: ListAPI.seeList().path(), params: nil, header: Header.acesstoken.header()).responseJSON{ (response) in
+        http.get(url: ListAPI.seeList.path(), params: nil, header: Header.acesstoken.header()).responseJSON{ [self] response in
             switch response.response?.statusCode{
             case 200 :
-                
+                let model = try? JSONDecoder().decode(CommunityList.self, from: response.data!)
+                self.communityModel.communityResponse.removeAll()
+                communityModel.communityResponse.append(contentsOf: model!.communityResponse)
+                tableView.reloadData()
             case 401 :
-                
+                print("token error")
             case 404 :
                 print("not found")
+            default :
+                print(response.response?.statusCode)
             }
         }
     }

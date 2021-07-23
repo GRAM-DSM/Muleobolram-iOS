@@ -10,7 +10,7 @@ import Foundation
 enum ListAPI : API {
     case listWrite
     case listDelete(_ id : Int)
-    case seeList(_ id : Int)
+    case seeList
     
     func path() -> String {
         switch self {
@@ -18,8 +18,8 @@ enum ListAPI : API {
             return "/post"
         case .listDelete(let id) :
             return "/post/\(id)"
-        case .seeList(let id) :
-            return "/post/\(id)"
+        case .seeList :
+            return "/post"
         }
     }
     

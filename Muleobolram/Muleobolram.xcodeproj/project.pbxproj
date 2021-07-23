@@ -19,7 +19,6 @@
 		387C09F126A020960061606D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09EF26A020960061606D /* CommentTableViewCell.swift */; };
 		387C09F226A020960061606D /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387C09F026A020960061606D /* CommentTableViewCell.xib */; };
 		387C09F526A2EEB70061606D /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09F426A2EEB70061606D /* CommunityList.swift */; };
-		387C09F826A430880061606D /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09F726A430880061606D /* Add.swift */; };
 		38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABD1A926971034004648B6 /* AppDelegate.swift */; };
 		38ABD1AC26971034004648B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ABD1AB26971034004648B6 /* SceneDelegate.swift */; };
 		38ABD1B126971034004648B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38ABD1AF26971034004648B6 /* Main.storyboard */; };
@@ -33,6 +32,8 @@
 		38C7FC5C269D9FA6002B8AE7 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */; };
 		38C7FC5E269E7D1A002B8AE7 /* CommunityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FC5D269E7D1A002B8AE7 /* CommunityListViewController.swift */; };
 		38D1E22D2699F547004728A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1E22C2699F547004728A3 /* LoginViewController.swift */; };
+		38F218CE26A846F200D03DA4 /* ViewControllerExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F218CD26A846F200D03DA4 /* ViewControllerExtenstion.swift */; };
+		38F218D026AAE87500D03DA4 /* CommunityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F218CF26AAE87500D03DA4 /* CommunityResponse.swift */; };
 		B913A620EB61848C061BE692 /* Pods_Muleobolram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,6 @@
 		387C09EF26A020960061606D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		387C09F026A020960061606D /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		387C09F426A2EEB70061606D /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
-		387C09F726A430880061606D /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		38ABD1A626971034004648B6 /* Muleobolram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muleobolram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38ABD1A926971034004648B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38ABD1AB26971034004648B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		38C7FC5B269D9FA6002B8AE7 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		38C7FC5D269E7D1A002B8AE7 /* CommunityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityListViewController.swift; sourceTree = "<group>"; };
 		38D1E22C2699F547004728A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		38F218CD26A846F200D03DA4 /* ViewControllerExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtenstion.swift; sourceTree = "<group>"; };
+		38F218CF26AAE87500D03DA4 /* CommunityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityResponse.swift; sourceTree = "<group>"; };
 		5ED2D7C5E706CE0D6E7B4080 /* Pods_Muleobolram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muleobolram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ABD951F5EAF37179635646 /* Pods-Muleobolram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muleobolram.debug.xcconfig"; path = "Target Support Files/Pods-Muleobolram/Pods-Muleobolram.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8F1A39A9D42D75A7BECF52 /* Pods-Muleobolram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muleobolram.release.xcconfig"; path = "Target Support Files/Pods-Muleobolram/Pods-Muleobolram.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +152,6 @@
 		3836302C269EF41600C17C01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				387C09F626A430720061606D /* AddList */,
 				387C09F326A2EEA10061606D /* Commnuity */,
 				387C09E8269FF6060061606D /* Comment */,
 				38363030269EFB6700C17C01 /* Auth */,
@@ -190,16 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				387C09F426A2EEB70061606D /* CommunityList.swift */,
+				38F218CF26AAE87500D03DA4 /* CommunityResponse.swift */,
 			);
 			path = Commnuity;
-			sourceTree = "<group>";
-		};
-		387C09F626A430720061606D /* AddList */ = {
-			isa = PBXGroup;
-			children = (
-				387C09F726A430880061606D /* Add.swift */,
-			);
-			path = AddList;
 			sourceTree = "<group>";
 		};
 		38ABD19D26971034004648B6 = {
@@ -223,6 +217,7 @@
 		38ABD1A826971034004648B6 /* Muleobolram */ = {
 			isa = PBXGroup;
 			children = (
+				38F218CC26A846AD00D03DA4 /* Extenstion */,
 				3836302C269EF41600C17C01 /* Model */,
 				380548DA269716100051399A /* ViewController */,
 				3836302D269EF74200C17C01 /* Cell */,
@@ -236,6 +231,14 @@
 				38ABD1B726971037004648B6 /* Info.plist */,
 			);
 			path = Muleobolram;
+			sourceTree = "<group>";
+		};
+		38F218CC26A846AD00D03DA4 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				38F218CD26A846F200D03DA4 /* ViewControllerExtenstion.swift */,
+			);
+			path = Extenstion;
 			sourceTree = "<group>";
 		};
 		4402E12A01FDDF2D9DA2453A /* Pods */ = {
@@ -373,11 +376,12 @@
 				38C7FC51269D9819002B8AE7 /* TableViewCell.swift in Sources */,
 				387C09EC269FF6430061606D /* CommentResonse.swift in Sources */,
 				3859AFEC269B245B00CB6A71 /* SignupViewController.swift in Sources */,
+				38F218D026AAE87500D03DA4 /* CommunityResponse.swift in Sources */,
 				38C7FC5C269D9FA6002B8AE7 /* APIProvider.swift in Sources */,
 				38C7FC5A269D9F49002B8AE7 /* AuthAPI.swift in Sources */,
 				380548E02697170D0051399A /* Header.swift in Sources */,
 				380548E2269717330051399A /* httpClient.swift in Sources */,
-				387C09F826A430880061606D /* Add.swift in Sources */,
+				38F218CE26A846F200D03DA4 /* ViewControllerExtenstion.swift in Sources */,
 				38ABD1AA26971034004648B6 /* AppDelegate.swift in Sources */,
 				387C09F126A020960061606D /* CommentTableViewCell.swift in Sources */,
 				38ABD1AC26971034004648B6 /* SceneDelegate.swift in Sources */,

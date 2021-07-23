@@ -14,6 +14,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak private var psTxt : UITextField!
     @IBOutlet weak private var failetxt : UILabel!
     
+    private let httpClient = HTTPClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +33,20 @@ class LoginViewController: UIViewController{
     }   //로그인 버튼을 눌렀을 때
     
     private func clickLogIn(id : String, password : String) {   // 서버에 아이디랑 비밀번호를 보내고 받은 신호로 성공과 실패를 나누는 함수
-        let httpClient : HTTPClient
         httpClient.post(url: AuthAPI.login.path(), params: ["id" : id, "password" : password], header: Header.tokenIsEmpty.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode {
             case 201 :
                 do {
                     print("okay")
-                    guard let data = res.data else {
-                        return
-                    }
-                    guard let model = try? JSONDecoder().decode(SignInModel.self, from: data) else {
-                        return
-                    }
+                    let data = res.data
+                    let model = try? JSONDecoder().decode(SignInModel.self, from: data!)
                     print(model)
                     
-                    Token.acesstoken = model.acess_token
-                    Token.refreshToken = model.refresh_token
+                    Token.acesstoken = model?.acess_token
+                    Token.refreshToken = model?.refresh_token
                     
-                    let ListVC = self.storyboard?.instantiateViewController(withIdentifier: "list")
-                    self.navigationController?.pushViewController(ListVC!, animated: true)
+                    guard let listVC = self.storyboard?.instantiateViewController(withIdentifier: "listVC") else {return}
+                    self.navigationController?.pushViewController(listVC, animated: true)
                 }
                 catch {
                     print("Error \(error)")
@@ -78,6 +74,11 @@ class LoginViewController: UIViewController{
     @IBAction private func psTxtDelete(_ sender : UIButton)
     {
         psTxt.text! = ""
+    }
+    
+    @IBAction private func signUpBtn(_ sender : UIButton){
+        guard let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "signUpVC") else {return}
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
     /*
      // MARK: - Navigation

@@ -10,13 +10,10 @@ import Foundation
 struct Comment : Codable {
     var commentId = Int()
     var content = String()
-    var name = String()
-    var isMine = Bool()
     
-    init(commentId : Int, content : String, name : String, isMine : Bool) {
+    init(commentId : Int, content : String) {
         self.commentId = commentId
         self.content = content
-        self.name = name
-        self.isMine = isMine
     }
 }
+
