@@ -11,37 +11,88 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak private var titleTxt : UILabel!
     @IBOutlet weak private var contentTxt : UITextView!
-    @IBOutlet weak private var commentList : UITableView!
+    @IBOutlet weak private var tableView : UITableView!
+    @IBOutlet weak private var commentTxt : UITextField!ㅅ
     
+    private var commentModel = CommentList()
+    let http = HTTPClient()
+    
+    var Content = String()
+    var Title = String()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return commentModel.commentResponse.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+        cell.name.text = commentModel.commentResponse[indexPath.row].name
+        cell.detail.text = commentModel.commentResponse[indexPath.row].content
+        
+        return cell
     }
-
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let nibName = UINib(nibName: "CommentTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "commentCell")
         // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func getComment(id : Int){
+        http.get(url: CommentAPI.CommentList(id).path(), params: nil, header: Header.acesstoken.header()).responseJSON(completionHandler: {
+            res in
+            switch res.response?.statusCode{
+            case 200 :
+                let model = try? JSONDecoder().decode(CommentList.self, from: res.data!)
+                self.commentModel.commentResponse.removeAll()
+                self.commentModel.commentResponse.append(contentsOf: model!.commentResponse)
+                self.tableView.reloadData()
+            case 401 :
+                print("token error")
+            case 404 :
+                print("not found")
+            default :
+                print(res.response?.statusCode)
+                
+            }
+        })
     }
-    */
-
+    
+    private func postComment(id : Int, content : String, commentID : Int){
+        http.post(url: CommentAPI.CommentWrite(id).path(), params: ["id" : commentID ,"content" : content ], header: Header.acesstoken.header()).responseJSON(completionHandler: {
+            res in
+            switch res.response?.statusCode{
+            case 201 :
+                self.tableView.reloadData()
+            case 400 :
+                print("바디 요청이 잘못됨")
+            case 401 :
+                print("token error")
+            case 404 :
+                print("not found")
+            default :
+                print(res.response?.statusCode)
+            }
+        })
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

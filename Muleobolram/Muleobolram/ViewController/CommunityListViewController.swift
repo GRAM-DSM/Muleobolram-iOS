@@ -14,6 +14,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var communityModel = CommunityList()
     private var community = [Community]()
     
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return communityModel.communityResponse.count
@@ -36,6 +37,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC") as? CommentViewController else {return}
         
+        commentVC.Title = communityModel.communityResponse[indexPath.row].title
+        commentVC.Content = communityModel.communityResponse[indexPath.row].content
+        
+        navigationController?.pushViewController(commentVC, animated: true)
     }
 
     override func viewDidLoad() {
@@ -43,6 +48,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         let nibName = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "Cell")
+        getList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getList()
     }
 
     private func getList(){
