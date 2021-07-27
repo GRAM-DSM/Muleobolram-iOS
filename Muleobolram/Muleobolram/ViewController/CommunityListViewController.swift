@@ -39,6 +39,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         commentVC.Title = communityModel.communityResponse[indexPath.row].title
         commentVC.Content = communityModel.communityResponse[indexPath.row].content
+        commentVC.id = communityModel.communityResponse[indexPath.row].id
         
         navigationController?.pushViewController(commentVC, animated: true)
     }
@@ -56,7 +57,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     private func getList(){
-        let http : HTTPClient
+        let http = HTTPClient()
         http.get(url: ListAPI.seeList.path(), params: nil, header: Header.acesstoken.header()).responseJSON{ [self] response in
             switch response.response?.statusCode{
             case 200 :

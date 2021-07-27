@@ -12,13 +12,14 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak private var titleTxt : UILabel!
     @IBOutlet weak private var contentTxt : UITextView!
     @IBOutlet weak private var tableView : UITableView!
-    @IBOutlet weak private var commentTxt : UITextField!ㅅ
+    @IBOutlet weak private var commentTxt : UITextField!
     
     private var commentModel = CommentList()
     let http = HTTPClient()
     
     var Content = String()
     var Title = String()
+    var id = Int()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentModel.commentResponse.count
@@ -44,7 +45,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         let nibName = UINib(nibName: "CommentTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
         // Do any additional setup after loading the view.
-        
+        getComment(id: id)
+        titleTxt.text! = Title
+        contentTxt.text! = Content
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getComment(id: id)
+        titleTxt.text! = Title
+        contentTxt.text! = Content
     }
     
     private func getComment(id : Int){
@@ -85,6 +94,31 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    private func deleteList(id : Int){
+        http.delete(url: ListAPI.listDelete(id).path(), params: nil, header: Header.acesstoken.header()).responseJSON(completionHandler: {
+            res in
+            switch res.response?.statusCode{
+            case 200 :
+                self.navigationController?.popViewController(animated: true)
+            case 401 :
+                print("token error")
+            case 404 :
+                print("not found")
+            default :
+                print(res.response?.statusCode)
+            }
+        })
+    }
+    
+    @IBAction private func postCommentBtn(_ sender : UIButton){
+        postComment(id: id, content: contentTxt.text, commentID: <#T##Int#>)
+    }
+    
+    @IBAction private func deleteBtn(_ sender : UIBarButtonItem)
+    {
+        deleteList(id: )
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
      // MARK: - Navigation
      

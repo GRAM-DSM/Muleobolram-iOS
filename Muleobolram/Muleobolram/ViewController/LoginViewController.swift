@@ -23,7 +23,9 @@ class LoginViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         failetxt.isHidden = true
-    }   // 화면에 들어갈 때 마다 실패문자는 사라짐
+        idTxt.text! = ""
+        psTxt.text! = ""
+    }
     
     @IBAction func didLogIn(_ sender: UIButton){
         guard let id = idTxt.text, !id.isEmpty else {return}

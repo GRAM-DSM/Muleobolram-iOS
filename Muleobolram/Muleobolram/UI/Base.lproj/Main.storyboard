@@ -125,6 +125,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvu-PN-zeH"/>
+                                    <segue destination="Zpf-Pf-fFB" kind="show" id="sCj-IL-Nxd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf6-TL-3Xw">
@@ -529,6 +530,9 @@
                     <navigationItem key="navigationItem" title="추가하기" id="pVz-1G-vQf">
                         <barButtonItem key="rightBarButtonItem" title="추가" id="IAv-sy-DOG">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addBtn:" destination="LwS-Id-naw" id="05a-i1-pEi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -540,7 +544,7 @@
             </objects>
             <point key="canvasLocation" x="2565" y="-643"/>
         </scene>
-        <!--Comment View Controller-->
+        <!--댓글달기-->
         <scene sceneID="Kkt-1K-xGe">
             <objects>
                 <viewController storyboardIdentifier="CommentVC" id="CbR-It-zrr" customClass="CommentViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
@@ -580,12 +584,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MZ-0LE">
-                                <rect key="frame" x="0.0" y="487" width="390" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="46W-pZ-nPj"/>
-                                    <constraint firstAttribute="width" constant="390" id="AAx-Bc-9Qm"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MZ-0LE">
+                                <rect key="frame" x="0.0" y="477" width="344" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -601,11 +601,17 @@
                                     <outlet property="delegate" destination="CbR-It-zrr" id="y9b-Ls-m1T"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UF-fh-wpl">
+                                <rect key="frame" x="352" y="487" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="전송">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mKr-hf-Wm2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T2Q-MZ-0LE" firstAttribute="top" secondItem="yPi-xx-SNz" secondAttribute="bottom" constant="62" id="2hF-Jn-fVa"/>
                             <constraint firstItem="T2Q-MZ-0LE" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="90h-6F-Mia"/>
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="pM4-s0-WIy" secondAttribute="trailing" constant="20" id="LcU-h1-chX"/>
                             <constraint firstItem="yPi-xx-SNz" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="YMI-wT-dZr"/>
@@ -617,13 +623,20 @@
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="yPi-xx-SNz" secondAttribute="trailing" id="q2K-63-Qec"/>
                             <constraint firstItem="yPi-xx-SNz" firstAttribute="trailing" secondItem="mKr-hf-Wm2" secondAttribute="trailing" id="qcP-UB-5bP"/>
                             <constraint firstItem="RsP-8p-5r7" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="rh3-63-yi1"/>
-                            <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="T2Q-MZ-0LE" secondAttribute="trailing" id="zOa-gw-NrJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="v1G-hP-2ZI"/>
+                    <navigationItem key="navigationItem" title="댓글달기" id="v1G-hP-2ZI">
+                        <barButtonItem key="rightBarButtonItem" title="삭제하기" id="Bqm-Oi-h7J">
+                            <connections>
+                                <action selector="deleteBtn:" destination="CbR-It-zrr" id="ItS-cH-SGp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentList" destination="RsP-8p-5r7" id="0s3-RD-2W0"/>
+                        <outlet property="commentTxt" destination="T2Q-MZ-0LE" id="gHE-bx-GCK"/>
                         <outlet property="contentTxt" destination="yPi-xx-SNz" id="nZk-07-F7Y"/>
+                        <outlet property="tableView" destination="RsP-8p-5r7" id="ZWA-Yf-M22"/>
                         <outlet property="titleTxt" destination="pM4-s0-WIy" id="ztj-Cd-oQQ"/>
                     </connections>
                 </viewController>
