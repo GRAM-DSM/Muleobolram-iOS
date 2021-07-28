@@ -27,27 +27,28 @@ class LoginViewController: UIViewController{
         psTxt.text! = ""
     }
     
-    @IBAction func didLogIn(_ sender: UIButton){
+    @IBAction func logInDidTap(_ sender: UIButton){
         guard let id = idTxt.text, !id.isEmpty else {return}
         guard let ps = psTxt.text, !ps.isEmpty else {return}
         
-        clickLogIn(id: id, password: ps)
+        LogIn(id: id, password: ps)
     }   //로그인 버튼을 눌렀을 때
     
-    private func clickLogIn(id : String, password : String) {   // 서버에 아이디랑 비밀번호를 보내고 받은 신호로 성공과 실패를 나누는 함수
-        httpClient.post(url: AuthAPI.login.path(), params: ["id" : id, "password" : password], header: Header.tokenIsEmpty.header()).responseJSON(completionHandler: { res in
+    private func LogIn(id : String, password : String) {
+        httpClient.post(url: AuthAPI.login.path(), params: ["id" : id, "password" : password],
+             header: Header.tokenIsEmpty.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode {
             case 201 :
-                do {
+                do {                                                                               
                     print("okay")
                     let data = res.data
                     let model = try? JSONDecoder().decode(SignInModel.self, from: data!)
-                    print(model)
                     
                     Token.acesstoken = model?.acess_token
                     Token.refreshToken = model?.refresh_token
                     
-                    guard let listVC = self.storyboard?.instantiateViewController(withIdentifier: "listVC") else {return}
+                    guard let listVC = self.storyboard?.instantiateViewController(withIdentifier:
+                                                                          "listVC") else {return}
                     self.navigationController?.pushViewController(listVC, animated: true)
                 }
                 catch {
@@ -68,18 +69,19 @@ class LoginViewController: UIViewController{
         
     }
     
-    @IBAction private func idTxtDelete(_ sender : UIButton)
+    @IBAction private func idTxtDeleteDidTap(_ sender : UIButton)
     {
         idTxt.text! = ""
     }
     
-    @IBAction private func psTxtDelete(_ sender : UIButton)
+    @IBAction private func psTxtDeleteDidTap(_ sender : UIButton)
     {
         psTxt.text! = ""
     }
     
-    @IBAction private func signUpBtn(_ sender : UIButton){
-        guard let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "signUpVC") else {return}
+    @IBAction private func signUpBtnDidTap(_ sender : UIButton){
+        guard let signUpVC = self.storyboard?.instantiateViewController(withIdentifier:
+                                                                        "signUpVC") else {return}
         self.navigationController?.pushViewController(signUpVC, animated: true)
     }
     /*

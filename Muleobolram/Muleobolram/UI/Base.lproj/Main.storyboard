@@ -90,7 +90,7 @@
                                     <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="idTxtDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05O-Gc-RBA"/>
+                                    <action selector="idTxtDeleteDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTT-Ga-ck8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcV-mM-XLS">
@@ -104,7 +104,7 @@
                                     <color key="titleColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="psTxtDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2aS-dK-jND"/>
+                                    <action selector="psTxtDeleteDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AwG-ra-K2A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRk-wM-lew">
@@ -124,7 +124,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="didLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvu-PN-zeH"/>
+                                    <action selector="logInDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bad-et-4Cm"/>
                                     <segue destination="Zpf-Pf-fFB" kind="show" id="sCj-IL-Nxd"/>
                                 </connections>
                             </button>
@@ -162,7 +162,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nR8-Iv-CEm"/>
+                                    <action selector="signUpBtnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8c-OJ-u82"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-h1-I4G">
@@ -465,6 +465,9 @@
                     <navigationItem key="navigationItem" title="커뮤니티" id="Uzg-jw-qpB">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="V5U-uz-u8g">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="CbR-It-zrr" kind="show" id="USI-hR-R2q"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -531,7 +534,7 @@
                         <barButtonItem key="rightBarButtonItem" title="추가" id="IAv-sy-DOG">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="addBtn:" destination="LwS-Id-naw" id="05a-i1-pEi"/>
+                                <action selector="addBtnDidTap:" destination="LwS-Id-naw" id="kmL-n0-UAI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -628,12 +631,11 @@
                     <navigationItem key="navigationItem" title="댓글달기" id="v1G-hP-2ZI">
                         <barButtonItem key="rightBarButtonItem" title="삭제하기" id="Bqm-Oi-h7J">
                             <connections>
-                                <action selector="deleteBtn:" destination="CbR-It-zrr" id="ItS-cH-SGp"/>
+                                <action selector="deleteBtnDidTap:" destination="CbR-It-zrr" id="KHk-b7-f05"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="commentList" destination="RsP-8p-5r7" id="0s3-RD-2W0"/>
                         <outlet property="commentTxt" destination="T2Q-MZ-0LE" id="gHE-bx-GCK"/>
                         <outlet property="contentTxt" destination="yPi-xx-SNz" id="nZk-07-F7Y"/>
                         <outlet property="tableView" destination="RsP-8p-5r7" id="ZWA-Yf-M22"/>

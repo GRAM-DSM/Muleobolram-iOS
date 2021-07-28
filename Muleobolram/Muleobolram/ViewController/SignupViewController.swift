@@ -22,13 +22,16 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    private func signUp(id : String, ps : String, name : String){
-        httpClient.post(url: AuthAPI.signUp.path(), params: ["name" : name, "id" : id, "password" : ps], header: Header.tokenIsEmpty.header()).responseJSON { response in
-            switch response.response?.statusCode {
-            
+    private func signUp(id : String, ps : String, name : String) {
+        
+        httpClient.post(url: AuthAPI.signUp.path(),
+                params: ["name": name, "id": id, "password": ps],
+                        header: Header.tokenIsEmpty.header()).responseJSON { response in
+            switch response.response?.statusCode
+            {
             case 201 :
                 self.errorAlert(title: "회원가입에 성공하셨습니다.", action: {
-                            ACTION in self.navigationController?.popViewController(animated: true)})
+                        ACTION in self.navigationController?.popViewController(animated: true)})
                 
             case 400 :
                 self.errorAlert(title: "아이디나 비밀번호 형식이 알맞지 않습니다.", action: nil)
@@ -43,9 +46,9 @@ class SignupViewController: UIViewController {
         
     }
     
-    private func check(id : String){
-        httpClient.get(url: AuthAPI.auth.path(), params: ["id" : id], header: Header.tokenIsEmpty.header()).responseJSON {
-            res in
+    private func check(id : String) {
+        httpClient.get(url: AuthAPI.auth.path(), params: ["id": id],
+                       header: Header.tokenIsEmpty.header()).responseJSON { res in
             switch res.response?.statusCode {
             case 200 :
                 self.errorAlert(title: "사용할 수 있는 아이디입니다.", action: nil)
@@ -62,11 +65,11 @@ class SignupViewController: UIViewController {
         }
     }
     
-    @IBAction private func signUpBtn(_ sender : UIButton){
+    @IBAction private func signUpBtn(_ sender : UIButton) {
         signUp(id: idTxt.text!, ps: psTxt.text!, name: nameTxt.text!)
     }
     
-    @IBAction private func checkBtn(_ sender : UIButton){
+    @IBAction private func checkBtn(_ sender : UIButton) {
         check(id: idTxt.text!)
     }
     

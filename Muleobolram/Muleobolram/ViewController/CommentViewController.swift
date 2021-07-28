@@ -25,9 +25,10 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         return commentModel.commentResponse.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell",
+                                                 for: indexPath) as! CommentTableViewCell
         cell.name.text = commentModel.commentResponse[indexPath.row].name
         cell.detail.text = commentModel.commentResponse[indexPath.row].content
         
@@ -56,9 +57,9 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         contentTxt.text! = Content
     }
     
-    private func getComment(id : Int){
-        http.get(url: CommentAPI.CommentList(id).path(), params: nil, header: Header.acesstoken.header()).responseJSON(completionHandler: {
-            res in
+    private func getComment(id : Int) {
+        http.get(url: CommentAPI.CommentList(id).path(), params: nil,
+                 header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
                 let model = try? JSONDecoder().decode(CommentList.self, from: res.data!)
@@ -76,8 +77,10 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
-    private func postComment(id : Int, content : String, commentID : Int){
-        http.post(url: CommentAPI.CommentWrite(id).path(), params: ["id" : commentID ,"content" : content ], header: Header.acesstoken.header()).responseJSON(completionHandler: {
+    private func postComment(id : Int, content : String, commentID : Int) {
+        http.post(url: CommentAPI.CommentWrite(id).path(),
+                  params: ["id" : commentID, "content" : content ],
+                   header: Header.acesstoken.header()).responseJSON(completionHandler: {
             res in
             switch res.response?.statusCode{
             case 201 :
@@ -95,8 +98,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func deleteList(id : Int){
-        http.delete(url: ListAPI.listDelete(id).path(), params: nil, header: Header.acesstoken.header()).responseJSON(completionHandler: {
-            res in
+        http.delete(url: ListAPI.listDelete(id).path(), params: nil,
+                    header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
                 self.navigationController?.popViewController(animated: true)
@@ -110,13 +113,12 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
-    @IBAction private func postCommentBtn(_ sender : UIButton){
-        postComment(id: id, content: contentTxt.text, commentID: <#T##Int#>)
+    @IBAction private func postCommentBtnDidTap(_ sender : UIButton) {
+        postComment(id: id, content: commentTxt.text!, commentID: <#T##Int#>)
     }
     
-    @IBAction private func deleteBtn(_ sender : UIBarButtonItem)
-    {
-        deleteList(id: )
+    @IBAction private func deleteBtnDidTap(_ sender : UIBarButtonItem) {
+        deleteList(id: <#T##Int#>)
         self.navigationController?.popViewController(animated: true)
     }
     /*

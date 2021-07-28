@@ -18,8 +18,9 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    private func updateCommunity(title : String, content : String){
-        http.post(url: ListAPI.listWrite.path(), params: ["title" : title, "content" : content], header: Header.acesstoken.header()).responseJSON(completionHandler: {res in
+    private func updateCommunity(title: String, content: String) {
+        http.post(url: ListAPI.listWrite.path(), params: ["title": title, "content": content],
+                   header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
            case 201 :
             self.navigationController?.popViewController(animated: true)
@@ -33,7 +34,7 @@ class AddViewController: UIViewController {
         })
     }
     
-    @IBAction private func addBtn(_ sender : UIBarButtonItem){
+    @IBAction private func addBtnDidTap(_ sender : UIBarButtonItem) {
         guard let title = titleTxt.text, !title.isEmpty else {return}
         guard let content = contentTxt.text, !content.isEmpty else {return}
         updateCommunity(title: title, content: content)

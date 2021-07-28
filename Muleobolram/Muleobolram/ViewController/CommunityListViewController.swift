@@ -25,8 +25,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 1
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                                  for: indexPath) as! TableViewCell
             
         cell.nameLabel.text = communityModel.communityResponse[indexPath.row].myName
         cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
@@ -35,7 +37,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC") as? CommentViewController else {return}
+        guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC")
+                as? CommentViewController else {return}
         
         commentVC.Title = communityModel.communityResponse[indexPath.row].title
         commentVC.Content = communityModel.communityResponse[indexPath.row].content
@@ -58,7 +61,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     private func getList(){
         let http = HTTPClient()
-        http.get(url: ListAPI.seeList.path(), params: nil, header: Header.acesstoken.header()).responseJSON{ [self] response in
+        http.get(url: ListAPI.seeList.path(), params: nil,
+                 header: Header.acesstoken.header()).responseJSON { [self] response in
             switch response.response?.statusCode{
             case 200 :
                 let model = try? JSONDecoder().decode(CommunityList.self, from: response.data!)
