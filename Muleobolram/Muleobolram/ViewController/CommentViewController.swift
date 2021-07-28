@@ -19,7 +19,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var Content = String()
     var Title = String()
-    var id = Int()
+    var id = Int()  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentModel.commentResponse.count
@@ -80,8 +80,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func postComment(id : Int, content : String, commentID : Int) {
         http.post(url: CommentAPI.CommentWrite(id).path(),
                   params: ["id" : commentID, "content" : content ],
-                   header: Header.acesstoken.header()).responseJSON(completionHandler: {
-            res in
+                   header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 201 :
                 self.tableView.reloadData()
