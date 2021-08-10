@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CommentViewController: UIViewController{
     
     @IBOutlet weak private var titleTxt : UILabel!
     @IBOutlet weak private var contentTxt : UITextView!
@@ -19,27 +19,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var Content = String()
     var Title = String()
-    var id = Int()  
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentModel.commentResponse.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell",
-                                                 for: indexPath) as! CommentTableViewCell
-        cell.name.text = commentModel.commentResponse[indexPath.row].name
-        cell.detail.text = commentModel.commentResponse[indexPath.row].content
+    var id = Int()
         
-        return cell
-    }
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +39,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func getComment(id : Int) {
-        http.get(url: CommentAPI.CommentList(id).path(), params: nil,
+        http.get(url: CommentAPI.commentList(id).path(), params: nil,
                  header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
@@ -77,9 +58,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
-    private func postComment(id : Int, content : String, commentID : Int) {
-        http.post(url: CommentAPI.CommentWrite(id).path(),
-                  params: ["id" : commentID, "content" : content ],
+    private func postComment(id : Int, content : String) {
+        http.post(url: CommentAPI.commentWrite(id).path(), params: ["content" : content],
                    header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 201 :
@@ -101,7 +81,9 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                     header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
-                self.navigationController?.popViewController(animated: true)
+                self.Alert(title: "이 게시물을 정말 삭제하시겠습니까?", action: {
+                    ACTION in self.navigationController?.popViewController(animated: true)
+                })
             case 401 :
                 print("token error")
             case 404 :
@@ -113,11 +95,11 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction private func postCommentBtnDidTap(_ sender : UIButton) {
-        postComment(id: id, content: commentTxt.text!, commentID: <#T##Int#>)
+        postComment(id: id, content: commentTxt.text!)
     }
     
     @IBAction private func deleteBtnDidTap(_ sender : UIBarButtonItem) {
-        deleteList(id: <#T##Int#>)
+        deleteList(id: id)
         self.navigationController?.popViewController(animated: true)
     }
     /*
@@ -130,4 +112,26 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
      }
      */
     
+}
+
+extension CommentViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentModel.commentResponse.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+        cell.name.text = commentModel.commentResponse[indexPath.row].name
+        cell.detail.text = commentModel.commentResponse[indexPath.row].content
+        
+        return cell
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
 }

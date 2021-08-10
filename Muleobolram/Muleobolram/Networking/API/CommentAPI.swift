@@ -8,14 +8,14 @@
 import Foundation
 
 enum CommentAPI : API {
-    case CommentList(_ id: Int)
-    case CommentWrite(_ id: Int)
+    case commentList(_ id: Int)
+    case commentWrite(_ id: Int)
     
     func path() -> String {
         switch self {
-        case .CommentWrite(let id):
+        case .commentWrite(let id):
             return "/comment/\(id)"
-        case .CommentList(let id):
+        case .commentList(let id):
             return "/comment/\(id)"
         }
     }

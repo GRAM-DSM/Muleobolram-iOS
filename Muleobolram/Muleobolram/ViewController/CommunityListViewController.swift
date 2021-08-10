@@ -7,45 +7,13 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CommunityListViewController: UIViewController{
 
     @IBOutlet weak var tableView : UITableView!
     
     private var communityModel = CommunityList()
     private var community = [Community]()
     
-    
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communityModel.communityResponse.count
-        
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                                  for: indexPath) as! TableViewCell
-            
-        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].myName
-        cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
-        
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC")
-                as? CommentViewController else {return}
-        
-        commentVC.Title = communityModel.communityResponse[indexPath.row].title
-        commentVC.Content = communityModel.communityResponse[indexPath.row].content
-        commentVC.id = communityModel.communityResponse[indexPath.row].id
-        
-        navigationController?.pushViewController(commentVC, animated: true)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +46,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    
+    @IBAction private func moveAddVCDidTat(_ sender : UIBarButtonItem) {
+        guard let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") else {return}
+        self.navigationController?.pushViewController(addVC, animated: true)
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -88,4 +62,38 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
+}
+
+extension CommunityListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return communityModel.communityResponse.count
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                                  for: indexPath) as! TableViewCell
+            
+        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].myName
+        cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
+        
+        
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC")
+                as? CommentViewController else {return}
+        
+        commentVC.Title = communityModel.communityResponse[indexPath.row].title
+        commentVC.Content = communityModel.communityResponse[indexPath.row].content
+        commentVC.id = communityModel.communityResponse[indexPath.row].id
+        
+        navigationController?.pushViewController(commentVC, animated: true)
+    }
 }

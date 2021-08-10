@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class LoginViewController: UIViewController{
     
@@ -18,7 +17,7 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        failetxt.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,7 +26,7 @@ class LoginViewController: UIViewController{
         psTxt.text! = ""
     }
     
-    @IBAction func logInDidTap(_ sender: UIButton){
+    @IBAction private func logInDidTap(_ sender: UIButton){
         guard let id = idTxt.text, !id.isEmpty else {return}
         guard let ps = psTxt.text, !ps.isEmpty else {return}
         
@@ -41,11 +40,10 @@ class LoginViewController: UIViewController{
             case 201 :
                 do {                                                                               
                     print("okay")
-                    let data = res.data
-                    let model = try? JSONDecoder().decode(SignInModel.self, from: data!)
+                    let model = try JSONDecoder().decode(SignInModel.self, from: res.data!)
                     
-                    Token.acesstoken = model?.acess_token
-                    Token.refreshToken = model?.refresh_token
+                    Token.acesstoken = model.acess_token
+                    Token.refreshToken = model.refresh_token
                     
                     guard let listVC = self.storyboard?.instantiateViewController(withIdentifier:
                                                                           "listVC") else {return}

@@ -16,9 +16,9 @@ enum ListAPI : API {
         switch self {
         case .listWrite:
             return "/post"
-        case .listDelete(let id) :
+        case .listDelete(let id):
             return "/post/\(id)"
-        case .seeList :
+        case .seeList:
             return "/post"
         }
     }

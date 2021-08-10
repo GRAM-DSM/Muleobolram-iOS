@@ -13,6 +13,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak private var contentTxt : UITextView!
     
     let http = HTTPClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,7 +21,7 @@ class AddViewController: UIViewController {
     
     private func updateCommunity(title: String, content: String) {
         http.post(url: ListAPI.listWrite.path(), params: ["title": title, "content": content],
-                   header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
+                  header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
            case 201 :
             self.navigationController?.popViewController(animated: true)
