@@ -27,10 +27,7 @@ class LoginViewController: UIViewController{
     }
     
     @IBAction private func logInDidTap(_ sender: UIButton){
-        guard let id = idTxt.text, !id.isEmpty else {return}
-        guard let ps = psTxt.text, !ps.isEmpty else {return}
-        
-        LogIn(id: id, password: ps)
+        LogIn(id: idTxt.text!, password: psTxt.text!)
     }   //로그인 버튼을 눌렀을 때
     
     private func LogIn(id : String, password : String) {
@@ -42,7 +39,7 @@ class LoginViewController: UIViewController{
                     print("okay")
                     let model = try JSONDecoder().decode(SignInModel.self, from: res.data!)
                     
-                    Token.acesstoken = model.acess_token
+                    Token.acesstoken = model.access_token
                     Token.refreshToken = model.refresh_token
                     
                     guard let listVC = self.storyboard?.instantiateViewController(withIdentifier:
@@ -57,7 +54,7 @@ class LoginViewController: UIViewController{
                 self.failetxt.isHidden = false
             case 404 :
                 print("not found id, password")
-                self.failetxt.isHidden = false  // 404가 뜨면 failtext는 화면에 나타남
+                self.failetxt.isHidden = false 
             default :
                 print(res.response?.statusCode)
             }
@@ -90,8 +87,7 @@ class LoginViewController: UIViewController{
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
-    
+    */
     
 }
 

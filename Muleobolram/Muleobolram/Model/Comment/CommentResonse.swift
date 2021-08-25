@@ -9,11 +9,11 @@ import Foundation
 
 struct Comment : Codable {
     var content = String()
-    var name = String()
+    var id = String()
     
-    init(content : String, name : String) {
+    init(content : String, id : String) {
         self.content = content
-        self.name = name
+        self.id = id
     }
 }
 

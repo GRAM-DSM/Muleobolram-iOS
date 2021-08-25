@@ -30,14 +30,14 @@ class SignupViewController: UIViewController {
             switch response.response?.statusCode
             {
             case 201 :
-                self.errorAlert(title: "회원가입에 성공하셨습니다.", action: {
+                self.errorAlert(title: "회원가입에\n성공했습니다.!!", action: {
                         ACTION in self.navigationController?.popViewController(animated: true)})
                 
             case 400 :
-                self.errorAlert(title: "아이디나 비밀번호 형식이 알맞지 않습니다.", action: nil)
+                self.errorAlert(title: "비밀번호의 형식이\n알맞지 않습니다.", action: nil)
                 
             case 409 :
-                self.errorAlert(title: "이미있는 아이디입니다.", action: nil)
+                self.errorAlert(title: "아이디가\n중복됩니다.", action: nil)
                 
             default :
              print(response.response?.statusCode)
@@ -51,13 +51,13 @@ class SignupViewController: UIViewController {
                        header: Header.tokenIsEmpty.header()).responseJSON { res in
             switch res.response?.statusCode {
             case 200 :
-                self.errorAlert(title: "사용할 수 있는 아이디입니다.", action: nil)
+                self.errorAlert(title: "사용할 수 있는\n아이디입니다.", action: nil)
                 
             case 400 :
-                self.errorAlert(title: "아이디나 비밀번호 형식이 알맞지 않습니다.", action: nil)
+                self.errorAlert(title: "아이디의 형식이\n알맞지 않습니다..", action: nil)
                 
             case 409 :
-                self.errorAlert(title: "이미 있는 아이디입니다.", action: nil)
+                self.errorAlert(title: "아이디가\n중복됩니다.", action: nil)
                 
             default :
                 print(res.response?.statusCode)

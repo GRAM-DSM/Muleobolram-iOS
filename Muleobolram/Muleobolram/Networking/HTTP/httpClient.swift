@@ -16,10 +16,10 @@ protocol HTTPClientProvider {
 
 class HTTPClient : HTTPClientProvider{
     
-    let baseURL = ""
+    let baseURL = "http://rollbook.kro.kr:4090"
     
     func get(url: String, params: Parameters?, header: HTTPHeaders) -> DataRequest {
-        return AF.request(baseURL+url,
+        return AF.request(baseURL + url,
                           method : .get,
                           parameters: params,
                           encoding: URLEncoding.default,
@@ -28,7 +28,7 @@ class HTTPClient : HTTPClientProvider{
     }
     
     func post(url: String, params: Parameters?, header: HTTPHeaders) -> DataRequest {
-        return AF.request(baseURL+url,
+        return AF.request(baseURL + url,
                           method : .post,
                           parameters: params,
                           encoding: JSONEncoding.prettyPrinted,
@@ -37,7 +37,7 @@ class HTTPClient : HTTPClientProvider{
     }
     
     func delete(url: String, params: Parameters?, header: HTTPHeaders) -> DataRequest {
-        return AF.request(baseURL+url,
+        return AF.request(baseURL + url,
                           method : .delete,
                           parameters: params,
                           encoding: JSONEncoding.prettyPrinted,

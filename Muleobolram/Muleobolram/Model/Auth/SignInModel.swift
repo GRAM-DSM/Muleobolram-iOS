@@ -8,13 +8,12 @@
 import Foundation
 
 struct SignInModel : Codable {
-    
-    var acess_token = String()
+    var access_token = String()
     var refresh_token = String()
     
     
-    init(acess_token : String, refresh_token : String) {
-        self.acess_token = acess_token
+    init(acess_token : String,  refresh_token : String) {
+        self.access_token = acess_token
         self.refresh_token = refresh_token
     }
 }

@@ -24,7 +24,9 @@ class AddViewController: UIViewController {
                   header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
            case 201 :
-            self.navigationController?.popViewController(animated: true)
+            self.Alert(title: "진짜 이 글을\n커뮤니티에 게시하겠습니까", action: {
+                ACTION in self.navigationController?.popViewController(animated: true)
+            })
             case 400 :
                 print("바디 요청이 잘못됨")
             case 401 :

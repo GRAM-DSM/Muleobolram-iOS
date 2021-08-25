@@ -92,8 +92,9 @@ extension CommunityListViewController: UITableViewDelegate, UITableViewDataSourc
         
         commentVC.Title = communityModel.communityResponse[indexPath.row].title
         commentVC.Content = communityModel.communityResponse[indexPath.row].content
-        commentVC.id = communityModel.communityResponse[indexPath.row].id
+        commentVC.id = communityModel.communityResponse[indexPath.row].id_pk
         
         navigationController?.pushViewController(commentVC, animated: true)
     }
 }
+

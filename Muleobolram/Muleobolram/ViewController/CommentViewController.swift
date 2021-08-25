@@ -42,7 +42,7 @@ class CommentViewController: UIViewController{
         http.get(url: CommentAPI.commentList(id).path(), params: nil,
                  header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
-            case 200 :
+            case 201 :
                 let model = try? JSONDecoder().decode(CommentList.self, from: res.data!)
                 self.commentModel.commentResponse.removeAll()
                 self.commentModel.commentResponse.append(contentsOf: model!.commentResponse)
@@ -81,7 +81,7 @@ class CommentViewController: UIViewController{
                     header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
-                self.Alert(title: "이 게시물을 정말 삭제하시겠습니까?", action: {
+                self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: {
                     ACTION in self.navigationController?.popViewController(animated: true)
                 })
             case 401 :
@@ -123,7 +123,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
-        cell.name.text = commentModel.commentResponse[indexPath.row].name
+        cell.name.text = commentModel.commentResponse[indexPath.row].id
         cell.detail.text = commentModel.commentResponse[indexPath.row].content
         
         return cell

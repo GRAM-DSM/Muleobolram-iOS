@@ -12,7 +12,6 @@
 		38363029269EEEBA00C17C01 /* CommentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38363028269EEEBA00C17C01 /* CommentAPI.swift */; };
 		3836302B269EF09400C17C01 /* ListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3836302A269EF09400C17C01 /* ListAPI.swift */; };
 		38363032269EFB7D00C17C01 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38363031269EFB7D00C17C01 /* SignInModel.swift */; };
-		3859AFEA269AFD8100CB6A71 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3859AFE9269AFD8100CB6A71 /* NanumGothicBold.otf */; };
 		3859AFEC269B245B00CB6A71 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859AFEB269B245B00CB6A71 /* SignupViewController.swift */; };
 		387C09EA269FF6220061606D /* CommentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09E9269FF6220061606D /* CommentListModel.swift */; };
 		387C09EC269FF6430061606D /* CommentResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C09EB269FF6430061606D /* CommentResonse.swift */; };
@@ -43,7 +42,6 @@
 		38363028269EEEBA00C17C01 /* CommentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAPI.swift; sourceTree = "<group>"; };
 		3836302A269EF09400C17C01 /* ListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAPI.swift; sourceTree = "<group>"; };
 		38363031269EFB7D00C17C01 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
-		3859AFE9269AFD8100CB6A71 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = "../../../../../Downloads/나눔고딕/NanumGothicBold.otf"; sourceTree = "<group>"; };
 		3859AFEB269B245B00CB6A71 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		387C09E9269FF6220061606D /* CommentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListModel.swift; sourceTree = "<group>"; };
 		387C09EB269FF6430061606D /* CommentResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentResonse.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				38ABD1AB26971034004648B6 /* SceneDelegate.swift */,
 				38ABD1B226971037004648B6 /* Assets.xcassets */,
 				38ABD1B426971037004648B6 /* LaunchScreen.storyboard */,
-				3859AFE9269AFD8100CB6A71 /* NanumGothicBold.otf */,
 				38ABD1B726971037004648B6 /* Info.plist */,
 			);
 			path = Muleobolram;
@@ -309,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3859AFEA269AFD8100CB6A71 /* NanumGothicBold.otf in Resources */,
 				387C09F226A020960061606D /* CommentTableViewCell.xib in Resources */,
 				38C7FC52269D9819002B8AE7 /* TableViewCell.xib in Resources */,
 				38ABD1B626971037004648B6 /* LaunchScreen.storyboard in Resources */,

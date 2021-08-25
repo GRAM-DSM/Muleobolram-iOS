@@ -11,12 +11,12 @@ struct Community : Codable {
     var myName = String()
     var title = String()
     var content = String()
-    var id = Int()
+    var id_pk = Int()
     
-    init(myName : String, title : String, content : String, id : Int) {
+    init(myName : String, title : String, content : String, id_pk : Int) {
         self.myName = myName
         self.title = title
         self.content = content
-        self.id = id
+        self.id_pk = id_pk
     }
 }
