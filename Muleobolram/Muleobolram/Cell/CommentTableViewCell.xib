@@ -34,10 +34,6 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-wl-ADW">
                         <rect key="frame" x="70" y="0.0" width="320" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="200" id="Hny-d8-iqC"/>
-                            <constraint firstAttribute="width" constant="320" id="lZh-4f-gKX"/>
-                        </constraints>
                         <attributedString key="attributedText">
                             <fragment>
                                 <string key="content">안녕하세요저의이름은김기영입니다오늘은100자를채워야하기때문에저는이렇게하는겁니다죄송합니다지랄하지마시고저는사람입니다바보멍청이똥개머저리해삼병신같은새끼입니다시부랄저는이렇게살기싫으니나중에다시태어나도죽은사람처럼종용하게살겟습니다나는바보다나는바보다나는바보다는바보다너는멍청이똥개말미잘시밞병신새끼염병뒤졌으면좋겠어승진아255자가너무많아내가왜이렇게해야하는지모르겠어시발나는왜이렇고있는걸까시발나는귀찮아드디어255자가될것같은느낌이들어요너무설레네여아잇이제10자만쓰면되죠염병사랑합니다꺼져라</string>
