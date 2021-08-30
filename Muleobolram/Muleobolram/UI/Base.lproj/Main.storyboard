@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Gu-7z-xfE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669" y="-623"/>
+            <point key="canvasLocation" x="3578.2608695652175" y="-623.4375"/>
         </scene>
         <!--추가하기-->
         <scene sceneID="jXS-E8-Wh8">
@@ -490,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHj-iF-UGg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="-623"/>
+            <point key="canvasLocation" x="4401.449275362319" y="-623.4375"/>
         </scene>
         <!--댓글달기-->
         <scene sceneID="Kkt-1K-xGe">

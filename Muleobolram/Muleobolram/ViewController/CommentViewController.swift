@@ -26,7 +26,7 @@ class CommentViewController: UIViewController{
         super.viewDidLoad()
         let nibName = UINib(nibName: "CommentTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
-        // Do any additional setup after loading the view.
+       
         getComment(id: id)
         titleTxt.text! = Title
         contentTxt.text! = Content
@@ -37,6 +37,10 @@ class CommentViewController: UIViewController{
         titleTxt.text! = Title
         contentTxt.text! = Content
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+            self.view.endEditing(true)
+        }
     
     private func getComment(id : Int) {
         http.get(url: CommentAPI.commentList(id).path(), params: nil,
@@ -52,7 +56,7 @@ class CommentViewController: UIViewController{
             case 404 :
                 print("not found")
             default :
-                print(res.response?.statusCode)
+                print(res.response?.statusCode ?? 0)
                 
             }
         })
@@ -71,7 +75,7 @@ class CommentViewController: UIViewController{
             case 404 :
                 print("not found")
             default :
-                print(res.response?.statusCode)
+                print(res.response?.statusCode ?? 0)
             }
         })
     }
@@ -89,7 +93,7 @@ class CommentViewController: UIViewController{
             case 404 :
                 print("not found")
             default :
-                print(res.response?.statusCode)
+                print(res.response?.statusCode ?? 0)
             }
         })
     }
@@ -102,15 +106,6 @@ class CommentViewController: UIViewController{
         deleteList(id: id)
         self.navigationController?.popViewController(animated: true)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
@@ -125,6 +120,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
         cell.name.text = commentModel.commentResponse[indexPath.row].id
         cell.detail.text = commentModel.commentResponse[indexPath.row].content
+        
         
         return cell
     }
