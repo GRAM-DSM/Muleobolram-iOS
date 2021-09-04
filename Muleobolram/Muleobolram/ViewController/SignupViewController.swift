@@ -31,9 +31,9 @@ class SignupViewController: UIViewController {
                         header: Header.tokenIsEmpty.header()).responseJSON { response in
                             switch response.response?.statusCode
                             {
-                            case 201 :
+                            case 200 :
                                 self.errorAlert(title: "회원가입에\n성공했습니다.!!", action: {
-                                                    ACTION in self.navigationController?.popViewController(animated: true)})
+                                        ACTION in self.popVC()})
                                 
                             case 400 :
                                 self.errorAlert(title: "비밀번호의 형식이\n알맞지 않습니다.", action: nil)
@@ -49,7 +49,7 @@ class SignupViewController: UIViewController {
     }
     
     private func check(id : String) {
-        httpClient.get(url: AuthAPI.auth.path(), params: ["id": id],
+        httpClient.post(url: AuthAPI.auth.path(), params: ["id": id],
                        header: Header.tokenIsEmpty.header()).responseJSON { res in
                         switch res.response?.statusCode {
                         case 200 :

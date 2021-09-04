@@ -23,4 +23,11 @@ extension UIViewController{
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
+    func pushVC(VCname : String){
+        guard let VC = self.storyboard?.instantiateViewController(identifier: VCname) else {return}
+        navigationController?.pushViewController(VC, animated: true)
+    }
+    func popVC(){
+        navigationController?.popViewController(animated: true)
+    }
 }

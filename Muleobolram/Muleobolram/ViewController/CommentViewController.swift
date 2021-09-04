@@ -66,7 +66,7 @@ class CommentViewController: UIViewController{
         http.post(url: CommentAPI.commentWrite(id).path(), params: ["content" : content],
                    header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
-            case 201 :
+            case 200 :
                 self.tableView.reloadData()
             case 400 :
                 print("바디 요청이 잘못됨")
@@ -86,7 +86,7 @@ class CommentViewController: UIViewController{
             switch res.response?.statusCode{
             case 200 :
                 self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: {
-                    ACTION in self.navigationController?.popViewController(animated: true)
+                    ACTION in self.popVC()
                 })
             case 401 :
                 print("token error")

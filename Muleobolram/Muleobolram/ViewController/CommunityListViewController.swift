@@ -29,7 +29,7 @@ class CommunityListViewController: UIViewController{
     private func getList(){
         let http = HTTPClient()
         http.get(url: ListAPI.seeList.path(), params: nil,
-                 header: Header.acesstoken.header()).responseJSON { [self] response in
+                 header: Header.acesstoken.header()).responseJSON {[self] response in
                     switch response.response?.statusCode{
                     case 200 :
                         let model = try? JSONDecoder().decode(CommunityList.self, from: response.data!)
@@ -46,9 +46,8 @@ class CommunityListViewController: UIViewController{
                  }
     }
     
-    @IBAction private func moveAddVCDidTat(_ sender : UIBarButtonItem) {
-        guard let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") else {return}
-        self.navigationController?.pushViewController(addVC, animated: true)
+    @IBAction private func moveAddVCDidTap(_ sender : UIBarButtonItem) {
+        pushVC(VCname: "addVC")
         
     }
     

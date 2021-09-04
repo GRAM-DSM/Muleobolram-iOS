@@ -46,9 +46,7 @@ class LoginViewController: UIViewController{
                                     Token.acesstoken = model.access_token
                                     Token.refreshToken = model.refresh_token
                                     
-                                    guard let listVC = self.storyboard?.instantiateViewController(withIdentifier:
-                                                                                                    "listVC") else {return}
-                                    self.navigationController?.pushViewController(listVC, animated: true)
+                                    self.pushVC(VCname: "listVC")
                                 }
                                 catch {
                                     print("Error \(error)")
@@ -79,9 +77,7 @@ class LoginViewController: UIViewController{
     }
     
     @IBAction private func signUpBtnDidTap(_ sender : UIButton){
-        guard let signUpVC = self.storyboard?.instantiateViewController(withIdentifier:
-                                                                            "signUpVC") else {return}
-        self.navigationController?.pushViewController(signUpVC, animated: true)
+        pushVC(VCname: "signUpVC")
     }
 }
 
