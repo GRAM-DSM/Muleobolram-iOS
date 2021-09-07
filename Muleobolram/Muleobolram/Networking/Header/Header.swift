@@ -9,16 +9,16 @@ import Foundation
 import Alamofire
 
 struct Token {
-    static var _acesstoken : String?
-    static var acesstoken :String?{
+    static var _accesstoken : String?
+    static var accesstoken :String?{
         get{
-            _acesstoken = UserDefaults.standard.string(forKey: "token")
-            return _acesstoken
+            _accesstoken = UserDefaults.standard.string(forKey: "token")
+            return _accesstoken
         }
         
         set(newToken){
             UserDefaults.standard.setValue(newToken, forKey: "token")
-            _acesstoken = UserDefaults.standard.string(forKey: "token")
+            _accesstoken = UserDefaults.standard.string(forKey: "token")
         }
     }
     
@@ -33,14 +33,17 @@ struct Token {
             _refrsehToken = UserDefaults.standard.string(forKey: "refreshToken")
         }
     }
+    static func tokenRemove() {
+           accesstoken = nil
+       }
 }
 
 enum Header {
-    case acesstoken, tokenIsEmpty, refreshToken
+    case accesstoken, tokenIsEmpty, refreshToken
     
     func header() -> HTTPHeaders {
         
-        guard let token = Token.acesstoken else {
+        guard let token = Token.accesstoken else {
             return ["Content-Type" : "application/json"]
         }
         
@@ -49,7 +52,7 @@ enum Header {
         }
         
         switch self {
-        case .acesstoken:
+        case .accesstoken:
             return HTTPHeaders(["Authorization" : "Bearer " + token, "Content-Type" : "application/json"])
             
         case .refreshToken :

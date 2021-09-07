@@ -29,13 +29,18 @@ class CommunityListViewController: UIViewController{
     private func getList(){
         let http = HTTPClient()
         http.get(url: ListAPI.seeList.path(), params: nil,
-                 header: Header.acesstoken.header()).responseJSON {[self] response in
+                 header: Header.accesstoken.header()).responseJSON {[unowned self] response in
                     switch response.response?.statusCode{
                     case 200 :
-                        let model = try? JSONDecoder().decode(CommunityList.self, from: response.data!)
-                        self.communityModel.communityResponse.removeAll()
-                        communityModel.communityResponse.append(contentsOf: model!.communityResponse)
-                        tableView.reloadData()
+                        do {
+                            let model = try JSONDecoder().decode(CommunityList.self, from: response.data!)
+                            communityModel.communityResponse.removeAll()
+                            communityModel.communityResponse.append(contentsOf: model.communityResponse)
+                            tableView.reloadData()
+                        } catch {
+                            print(error)
+                        }
+                        
                     case 401 :
                         print("token error")
                     case 404 :
@@ -47,10 +52,13 @@ class CommunityListViewController: UIViewController{
     }
     
     @IBAction private func moveAddVCDidTap(_ sender : UIBarButtonItem) {
-        pushVC(VCname: "addVC")
+       presentVC(VCname: "addVC")
         
     }
-    
+    @IBAction private func moveLoginVCDidTap(_ sender : UIBarButtonItem) {
+        Token.tokenRemove()
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CommunityListViewController: UITableViewDelegate, UITableViewDataSource {

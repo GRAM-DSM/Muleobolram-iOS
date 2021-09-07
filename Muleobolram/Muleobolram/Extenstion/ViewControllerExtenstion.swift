@@ -30,4 +30,9 @@ extension UIViewController{
     func popVC(){
         navigationController?.popViewController(animated: true)
     }
+    
+    func presentVC(VCname : String) {
+        guard let VC = self.storyboard?.instantiateViewController(identifier: VCname) else {return}
+        present(VC, animated: true, completion: nil)
+    }
 }

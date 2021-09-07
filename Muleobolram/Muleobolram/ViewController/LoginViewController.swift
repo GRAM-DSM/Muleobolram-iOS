@@ -43,10 +43,10 @@ class LoginViewController: UIViewController{
                                     print("okay")
                                     let model = try JSONDecoder().decode(SignInModel.self, from: res.data!)
                                     
-                                    Token.acesstoken = model.access_token
+                                    Token.accesstoken = model.access_token
                                     Token.refreshToken = model.refresh_token
                                     
-                                    self.pushVC(VCname: "listVC")
+                                    self.presentVC(VCname: "listVC")
                                 }
                                 catch {
                                     print("Error \(error)")

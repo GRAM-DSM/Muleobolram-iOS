@@ -24,7 +24,7 @@ class AddViewController: UIViewController {
     
     private func updateCommunity(title: String, content: String) {
         http.post(url: ListAPI.listWrite.path(), params: ["title": title, "content": content],
-                  header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
+                  header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
                     switch res.response?.statusCode{
                     case 201 :
                         self.Alert(title: "진짜 이 글을\n커뮤니티에 게시하겠습니까", action: {

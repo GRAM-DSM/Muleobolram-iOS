@@ -44,7 +44,7 @@ class CommentViewController: UIViewController{
     
     private func getComment(id : Int) {
         http.get(url: CommentAPI.commentList(id).path(), params: nil,
-                 header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
+                 header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 201 :
                 let model = try? JSONDecoder().decode(CommentList.self, from: res.data!)
@@ -64,7 +64,7 @@ class CommentViewController: UIViewController{
     
     private func postComment(id : Int, content : String) {
         http.post(url: CommentAPI.commentWrite(id).path(), params: ["content" : content],
-                   header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
+                   header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
                 self.tableView.reloadData()
@@ -82,7 +82,7 @@ class CommentViewController: UIViewController{
     
     private func deleteList(id : Int){
         http.delete(url: ListAPI.listDelete(id).path(), params: nil,
-                    header: Header.acesstoken.header()).responseJSON(completionHandler: { res in
+                    header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
             switch res.response?.statusCode{
             case 200 :
                 self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: {
