@@ -19,8 +19,8 @@ class AddViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     private func updateCommunity(title: String, content: String) {
         http.post(url: ListAPI.listWrite.path(), params: ["title": title, "content": content],

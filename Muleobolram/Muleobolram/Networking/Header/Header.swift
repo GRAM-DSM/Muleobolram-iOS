@@ -56,7 +56,7 @@ enum Header {
             return HTTPHeaders(["Authorization" : "Bearer " + token, "Content-Type" : "application/json"])
             
         case .refreshToken :
-            return HTTPHeaders(["Authorization" : "Bearer " + token, "Content-Type" : "application/json"])
+            return HTTPHeaders(["Authorization" : "Bearer " + refreshToken, "Content-Type" : "application/json"])
             
         case .tokenIsEmpty:
             return ["Content-Type" : "application/json"]

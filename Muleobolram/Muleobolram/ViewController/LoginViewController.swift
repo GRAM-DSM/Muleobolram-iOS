@@ -27,8 +27,8 @@ class LoginViewController: UIViewController{
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     @IBAction private func logInDidTap(_ sender: UIButton){
         LogIn(id: idTxt.text!, password: psTxt.text!)

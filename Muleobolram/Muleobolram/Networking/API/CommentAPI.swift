@@ -14,9 +14,9 @@ enum CommentAPI : API {
     func path() -> String {
         switch self {
         case .commentWrite(let id):
-            return "/comment/\(id)"
+            return "/comment?post_id=\(id)"
         case .commentList(let id):
-            return "/comment/\(id)"
+            return "/comment?post_id=\(id)"
         }
     }
     

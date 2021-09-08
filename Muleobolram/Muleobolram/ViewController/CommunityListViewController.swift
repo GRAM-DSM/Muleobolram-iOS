@@ -12,14 +12,13 @@ class CommunityListViewController: UIViewController{
     @IBOutlet weak var tableView : UITableView!
     
     private var communityModel = CommunityList()
-    private var community = [Community]()
+    private var communityResponse = [Community]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nibName = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "Cell")
-        getList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,7 +51,7 @@ class CommunityListViewController: UIViewController{
     }
     
     @IBAction private func moveAddVCDidTap(_ sender : UIBarButtonItem) {
-       presentVC(VCname: "addVC")
+        presentVC(VCname: "addVC")
         
     }
     @IBAction private func moveLoginVCDidTap(_ sender : UIBarButtonItem) {
@@ -77,7 +76,7 @@ extension CommunityListViewController: UITableViewDelegate, UITableViewDataSourc
                                                  for: indexPath) as! TableViewCell
         
         cell.selectionStyle = .none
-        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].myName
+        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].name
         cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
         
         

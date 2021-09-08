@@ -387,7 +387,7 @@
         <!--커뮤니티-->
         <scene sceneID="xbt-ih-upg">
             <objects>
-                <viewController storyboardIdentifier="listVC" id="Zpf-Pf-fFB" customClass="CommunityListViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listVC" modalPresentationStyle="fullScreen" id="Zpf-Pf-fFB" customClass="CommunityListViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FJv-cB-izT" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -435,7 +435,7 @@
         <!--추가하기-->
         <scene sceneID="jXS-E8-Wh8">
             <objects>
-                <viewController storyboardIdentifier="addVC" id="LwS-Id-naw" customClass="AddViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addVC" modalPresentationStyle="fullScreen" id="LwS-Id-naw" customClass="AddViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MQn-uw-B3j" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -501,7 +501,7 @@
         <!--댓글달기-->
         <scene sceneID="Kkt-1K-xGe">
             <objects>
-                <viewController storyboardIdentifier="CommentVC" id="CbR-It-zrr" customClass="CommentViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentVC" modalPresentationStyle="fullScreen" id="CbR-It-zrr" customClass="CommentViewController" customModule="Muleobolram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FH5-bj-e45" customClass="viewcon">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

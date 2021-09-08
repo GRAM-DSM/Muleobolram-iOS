@@ -21,8 +21,8 @@ class SignupViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     private func signUp(id : String, ps : String, name : String) {
         
@@ -31,9 +31,9 @@ class SignupViewController: UIViewController {
                         header: Header.tokenIsEmpty.header()).responseJSON { response in
                             switch response.response?.statusCode
                             {
-                            case 200 :
+                            case 201 :
                                 self.errorAlert(title: "회원가입에\n성공했습니다.!!", action: {
-                                        ACTION in self.popVC()})
+                                                    ACTION in self.popVC()})
                                 
                             case 400 :
                                 self.errorAlert(title: "비밀번호의 형식이\n알맞지 않습니다.", action: nil)
@@ -50,21 +50,21 @@ class SignupViewController: UIViewController {
     
     private func check(id : String) {
         httpClient.post(url: AuthAPI.auth.path(), params: ["id": id],
-                       header: Header.tokenIsEmpty.header()).responseJSON { res in
-                        switch res.response?.statusCode {
-                        case 200 :
-                            self.errorAlert(title: "사용할 수 있는\n아이디입니다.", action: nil)
-                            
-                        case 400 :
-                            self.errorAlert(title: "아이디의 형식이\n알맞지 않습니다..", action: nil)
-                            
-                        case 409 :
-                            self.errorAlert(title: "아이디가\n중복됩니다.", action: nil)
-                            
-                        default :
-                            print(res.response?.statusCode ?? 0)
+                        header: Header.tokenIsEmpty.header()).responseJSON { res in
+                            switch res.response?.statusCode {
+                            case 200 :
+                                self.errorAlert(title: "사용할 수 있는\n아이디입니다.", action: nil)
+                                
+                            case 400 :
+                                self.errorAlert(title: "아이디의 형식이\n알맞지 않습니다..", action: nil)
+                                
+                            case 409 :
+                                self.errorAlert(title: "아이디가\n중복됩니다.", action: nil)
+                                
+                            default :
+                                print(res.response?.statusCode ?? 0)
+                            }
                         }
-                       }
     }
     
     @IBAction private func signUpBtn(_ sender : UIButton) {
