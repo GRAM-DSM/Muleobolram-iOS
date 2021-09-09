@@ -8,5 +8,5 @@
 import Foundation
 
 struct CommunityList : Codable {
-    var communityResponse = [Community]()
+    var posts = [Community]()
 }

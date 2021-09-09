@@ -15,6 +15,7 @@ class CommentViewController: UIViewController{
     @IBOutlet weak private var commentTxt : UITextField!
     
     private var commentModel = CommentList()
+    private var comment_join = [Comment]()
     let http = HTTPClient()
     
     var Content = String()
@@ -48,8 +49,8 @@ class CommentViewController: UIViewController{
                     switch res.response?.statusCode{
                     case 201 :
                         let model = try? JSONDecoder().decode(CommentList.self, from: res.data!)
-                        self.commentModel.commentResponse.removeAll()
-                        self.commentModel.commentResponse.append(contentsOf: model!.commentResponse)
+                        self.commentModel.comment_join.removeAll()
+                        self.commentModel.comment_join.append(contentsOf: model!.comment_join)
                         self.tableView.reloadData()
                     case 401 :
                         print("token error")
@@ -67,7 +68,9 @@ class CommentViewController: UIViewController{
                   header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
                     switch res.response?.statusCode{
                     case 200 :
+                        self.getComment(id: id)
                         self.tableView.reloadData()
+                        self.commentTxt.text = nil
                     case 400 :
                         print("바디 요청이 잘못됨")
                     case 401 :
@@ -112,14 +115,14 @@ class CommentViewController: UIViewController{
 extension CommentViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentModel.commentResponse.count
+        return commentModel.comment_join.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
-        cell.name.text = commentModel.commentResponse[indexPath.row].name
-        cell.detail.text = commentModel.commentResponse[indexPath.row].content
+        cell.name.text = commentModel.comment_join[indexPath.row].name
+        cell.detail.text = commentModel.comment_join[indexPath.row].content
         
         
         return cell

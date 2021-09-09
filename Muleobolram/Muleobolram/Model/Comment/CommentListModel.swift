@@ -8,5 +8,5 @@
 import Foundation
 
 struct CommentList : Codable {
-    var commentResponse = [Comment]()
+    var comment_join = [Comment]()
 }

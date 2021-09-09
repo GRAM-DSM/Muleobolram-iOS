@@ -12,7 +12,7 @@ class CommunityListViewController: UIViewController{
     @IBOutlet weak var tableView : UITableView!
     
     private var communityModel = CommunityList()
-    private var communityResponse = [Community]()
+    private var posts = [Community]()
     
     
     override func viewDidLoad() {
@@ -33,8 +33,8 @@ class CommunityListViewController: UIViewController{
                     case 200 :
                         do {
                             let model = try JSONDecoder().decode(CommunityList.self, from: response.data!)
-                            communityModel.communityResponse.removeAll()
-                            communityModel.communityResponse.append(contentsOf: model.communityResponse)
+                            communityModel.posts.removeAll()
+                            communityModel.posts.append(contentsOf: model.posts)
                             tableView.reloadData()
                         } catch {
                             print(error)
@@ -62,7 +62,7 @@ class CommunityListViewController: UIViewController{
 
 extension CommunityListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communityModel.communityResponse.count
+        return communityModel.posts.count
         
     }
     
@@ -76,8 +76,8 @@ extension CommunityListViewController: UITableViewDelegate, UITableViewDataSourc
                                                  for: indexPath) as! TableViewCell
         
         cell.selectionStyle = .none
-        cell.nameLabel.text = communityModel.communityResponse[indexPath.row].name
-        cell.titleLabel.text = communityModel.communityResponse[indexPath.row].title
+        cell.nameLabel.text = communityModel.posts[indexPath.row].name
+        cell.titleLabel.text = communityModel.posts[indexPath.row].title
         
         
         return cell
@@ -87,9 +87,9 @@ extension CommunityListViewController: UITableViewDelegate, UITableViewDataSourc
         guard let commentVC = storyboard?.instantiateViewController(withIdentifier: "CommentVC")
                 as? CommentViewController else {return}
         
-        commentVC.Title = communityModel.communityResponse[indexPath.row].title
-        commentVC.Content = communityModel.communityResponse[indexPath.row].content
-        commentVC.id = communityModel.communityResponse[indexPath.row].id_pk
+        commentVC.Title = communityModel.posts[indexPath.row].title
+        commentVC.Content = communityModel.posts[indexPath.row].content
+        commentVC.id = communityModel.posts[indexPath.row].id_pk
         
         navigationController?.pushViewController(commentVC, animated: true)
     }

@@ -46,7 +46,7 @@ class LoginViewController: UIViewController{
                                     Token.accesstoken = model.access_token
                                     Token.refreshToken = model.refresh_token
                                     
-                                    self.presentVC(VCname: "listVC")
+                                    self.pushVC(VCname: "listVC")
                                 }
                                 catch {
                                     print("Error \(error)")
