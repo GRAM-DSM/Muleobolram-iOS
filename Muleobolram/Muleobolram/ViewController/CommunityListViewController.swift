@@ -56,7 +56,7 @@ class CommunityListViewController: UIViewController{
     }
     @IBAction private func moveLoginVCDidTap(_ sender : UIBarButtonItem) {
         Token.tokenRemove()
-        dismiss(animated: true, completion: nil)
+        popVC()
     }
 }
 

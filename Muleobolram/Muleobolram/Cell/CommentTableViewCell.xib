@@ -34,17 +34,7 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-wl-ADW">
                         <rect key="frame" x="70" y="0.0" width="320" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <attributedString key="attributedText">
-                            <fragment>
-                                <string key="content">안녕하세요저의이름은김기영입니다오늘은100자를채워야하기때문에저는이렇게하는겁니다죄송합니다지랄하지마시고저는사람입니다바보멍청이똥개머저리해삼병신같은새끼입니다시부랄저는이렇게살기싫으니나중에다시태어나도죽은사람처럼종용하게살겟습니다나는바보다나는바보다나는바보다는바보다너는멍청이똥개말미잘시밞병신새끼염병뒤졌으면좋겠어승진아255자가너무많아내가왜이렇게해야하는지모르겠어시발나는왜이렇고있는걸까시발나는귀찮아드디어255자가될것같은느낌이들어요너무설레네여아잇이제10자만쓰면되죠염병사랑합니다꺼져라</string>
-                                <attributes>
-                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" size="14" name="NanumGothic"/>
-                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                        <attributedString key="attributedText"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
@@ -59,6 +49,11 @@
                     <constraint firstItem="DOw-wl-ADW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jID-gR-9xO"/>
                     <constraint firstItem="DOw-wl-ADW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yVm-oF-A5m"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                        <real key="value" value="0.5"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

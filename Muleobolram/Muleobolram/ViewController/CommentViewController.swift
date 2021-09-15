@@ -88,9 +88,7 @@ class CommentViewController: UIViewController{
                     header: Header.accesstoken.header()).responseJSON(completionHandler: { res in
                         switch res.response?.statusCode{
                         case 200 :
-                            self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: {
-                                ACTION in self.popVC()
-                            })
+                           self.popVC()
                         case 401 :
                             print("token error")
                         case 404 :
@@ -106,7 +104,7 @@ class CommentViewController: UIViewController{
     }
     
     @IBAction private func deleteBtnDidTap(_ sender : UIBarButtonItem) {
-        deleteList(id: id)
+        self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: { ACTION in self.deleteList(id: self.id)})
         self.navigationController?.popViewController(animated: true)
     }
     
