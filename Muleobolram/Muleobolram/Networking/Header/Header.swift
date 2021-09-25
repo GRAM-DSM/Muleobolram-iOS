@@ -35,6 +35,7 @@ struct Token {
     }
     static func tokenRemove() {
            accesstoken = nil
+           refreshToken = nil
        }
 }
 

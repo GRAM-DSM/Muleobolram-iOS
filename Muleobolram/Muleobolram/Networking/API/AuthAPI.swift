@@ -8,9 +8,9 @@
 import Foundation
 
 enum AuthAPI : API {
-    case login //signIn login
-    case signUp // signUp
-    case auth
+    case login // 로그인
+    case signUp // 회원가입
+    case auth   // id 중복 확인
     
     func path() -> String {
         switch self {

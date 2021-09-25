@@ -90,7 +90,7 @@ class CommentViewController: UIViewController{
                         case 200 :
                            self.popVC()
                         case 401 :
-                            print("token error")
+                            self.errorAlert(title: "당신의 게시물이 아닙니다.", action: nil)
                         case 404 :
                             print("not found")
                         default :
@@ -105,7 +105,6 @@ class CommentViewController: UIViewController{
     
     @IBAction private func deleteBtnDidTap(_ sender : UIBarButtonItem) {
         self.Alert(title: "이 게시물을\n정말 삭제하시겠습니까?", action: { ACTION in self.deleteList(id: self.id)})
-        self.navigationController?.popViewController(animated: true)
     }
     
 }
