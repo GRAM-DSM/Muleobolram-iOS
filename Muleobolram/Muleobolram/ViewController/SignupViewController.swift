@@ -18,6 +18,11 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTextField()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setTextField()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -73,6 +78,15 @@ class SignupViewController: UIViewController {
     
     @IBAction private func checkBtn(_ sender : UIButton) {
         check(id: idTxt.text!)
+    }
+    
+    private func setTextField() {
+        idTxt.font = UIFont(name: "나눔고딕", size: 18)
+        psTxt.font = UIFont(name: "나눔고딕", size: 18)
+        nameTxt.font = UIFont(name: "나눔고딕", size: 18)
+        idTxt.textColor = .black
+        psTxt.textColor = .black
+        nameTxt.textColor = .black
     }
     
 }
