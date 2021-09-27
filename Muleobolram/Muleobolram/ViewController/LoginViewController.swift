@@ -18,12 +18,15 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         failetxt.isHidden = true
+        setTextField()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         failetxt.isHidden = true
         idTxt.text! = ""
         psTxt.text! = ""
+        setTextField()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -37,30 +40,30 @@ class LoginViewController: UIViewController{
     private func LogIn(id : String, password : String) {
         httpClient.post(url: AuthAPI.login.path(), params: ["id" : id, "password" : password],
                         header: Header.tokenIsEmpty.header()).responseJSON(completionHandler: { res in
-                            switch res.response?.statusCode {
-                            case 201 :
-                                do {
-                                    print("okay")
-                                    let model = try JSONDecoder().decode(SignInModel.self, from: res.data!)
-                                    
-                                    Token.accesstoken = model.access_token
-                                    Token.refreshToken = model.refresh_token
-                                    
-                                    self.pushVC(VCname: "listVC")
-                                }
-                                catch {
-                                    print("Error \(error)")
-                                }
-                            case 400 :
-                                print("body 요청이 잘못됨")
-                                self.failetxt.isHidden = false
-                            case 404 :
-                                print("not found id, password")
-                                self.failetxt.isHidden = false
-                            default :
-                                print(res.response?.statusCode ?? 0)
-                            }
-                        }
+            switch res.response?.statusCode {
+            case 201 :
+                do {
+                    print("okay")
+                    let model = try JSONDecoder().decode(SignInModel.self, from: res.data!)
+                    
+                    Token.accesstoken = model.access_token
+                    Token.refreshToken = model.refresh_token
+                    
+                    self.pushVC(VCname: "listVC")
+                }
+                catch {
+                    print("Error \(error)")
+                }
+            case 400 :
+                print("body 요청이 잘못됨")
+                self.failetxt.isHidden = false
+            case 404 :
+                print("not found id, password")
+                self.failetxt.isHidden = false
+            default :
+                print(res.response?.statusCode ?? 0)
+            }
+        }
                         )
         
         
@@ -78,6 +81,13 @@ class LoginViewController: UIViewController{
     
     @IBAction private func signUpBtnDidTap(_ sender : UIButton){
         pushVC(VCname: "signUpVC")
+    }
+    
+    private func setTextField() {
+        idTxt.font = UIFont(name: "나눔고딕", size: 18)
+        psTxt.font = UIFont(name: "나눔고딕", size: 18)
+        idTxt.textColor = .black
+        psTxt.textColor = .black
     }
 }
 
