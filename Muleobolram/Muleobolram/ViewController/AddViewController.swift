@@ -16,6 +16,8 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentTxt.font = UIFont(name: "나눔고딕", size: 18)
+        titleTxt.font = UIFont(name: "나눔고딕", size: 18)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
