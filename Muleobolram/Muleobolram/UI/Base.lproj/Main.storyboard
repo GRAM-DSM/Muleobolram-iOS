@@ -563,23 +563,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MZ-0LE">
-                                <rect key="frame" x="0.0" y="480.5" width="370" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="370" id="88q-pE-zIZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.bordeWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UF-fh-wpl">
                                 <rect key="frame" x="378" y="484.5" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -606,6 +589,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -634,28 +620,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2Q-MZ-0LE">
+                                <rect key="frame" x="1" y="480" width="358" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mKr-hf-Wm2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RsP-8p-5r7" firstAttribute="top" secondItem="T2Q-MZ-0LE" secondAttribute="bottom" id="3el-nv-7zr"/>
+                            <constraint firstItem="3UF-fh-wpl" firstAttribute="leading" secondItem="T2Q-MZ-0LE" secondAttribute="trailing" constant="19" id="4ap-59-fZi"/>
+                            <constraint firstItem="RsP-8p-5r7" firstAttribute="trailing" secondItem="mKr-hf-Wm2" secondAttribute="trailing" id="4nD-m0-ZkO"/>
+                            <constraint firstAttribute="bottom" secondItem="RsP-8p-5r7" secondAttribute="bottom" id="6Bf-YL-Gpi"/>
                             <constraint firstItem="uTH-8Q-VK9" firstAttribute="top" secondItem="pM4-s0-WIy" secondAttribute="bottom" constant="20" id="70x-aJ-y13"/>
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="3UF-fh-wpl" secondAttribute="trailing" constant="6" id="7GT-E4-7zB"/>
-                            <constraint firstItem="RsP-8p-5r7" firstAttribute="trailing" secondItem="mKr-hf-Wm2" secondAttribute="trailing" id="8SU-bs-8SZ"/>
-                            <constraint firstItem="T2Q-MZ-0LE" firstAttribute="top" secondItem="uTH-8Q-VK9" secondAttribute="bottom" constant="31.5" id="CzR-fp-Hfn"/>
-                            <constraint firstItem="RsP-8p-5r7" firstAttribute="top" secondItem="3UF-fh-wpl" secondAttribute="bottom" id="Ed9-FH-Teg"/>
+                            <constraint firstItem="RsP-8p-5r7" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="Dcq-97-Zg4"/>
                             <constraint firstItem="uTH-8Q-VK9" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="GiJ-w5-T2o"/>
                             <constraint firstItem="pM4-s0-WIy" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" constant="20" id="IIC-om-Hn7"/>
-                            <constraint firstAttribute="bottom" secondItem="RsP-8p-5r7" secondAttribute="bottom" id="KkO-XN-dsY"/>
-                            <constraint firstItem="T2Q-MZ-0LE" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="LY1-U5-V5b"/>
+                            <constraint firstItem="T2Q-MZ-0LE" firstAttribute="top" secondItem="uTH-8Q-VK9" secondAttribute="bottom" constant="31" id="O4D-oH-hj1"/>
+                            <constraint firstItem="T2Q-MZ-0LE" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" constant="1" id="RYN-kZ-V76"/>
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="3UF-fh-wpl" secondAttribute="trailing" constant="6" id="Wo6-nS-cnc"/>
                             <constraint firstItem="pM4-s0-WIy" firstAttribute="top" secondItem="mKr-hf-Wm2" secondAttribute="top" constant="130" id="bzT-LC-W8H"/>
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="pM4-s0-WIy" secondAttribute="trailing" constant="20" id="c3e-4f-L0F"/>
-                            <constraint firstItem="RsP-8p-5r7" firstAttribute="top" secondItem="T2Q-MZ-0LE" secondAttribute="bottom" id="ea8-33-u1l"/>
-                            <constraint firstItem="RsP-8p-5r7" firstAttribute="leading" secondItem="mKr-hf-Wm2" secondAttribute="leading" id="iBp-I4-p71"/>
                             <constraint firstItem="3UF-fh-wpl" firstAttribute="top" secondItem="uTH-8Q-VK9" secondAttribute="bottom" constant="35.5" id="iyw-Mw-pwn"/>
                             <constraint firstItem="mKr-hf-Wm2" firstAttribute="trailing" secondItem="uTH-8Q-VK9" secondAttribute="trailing" id="l1U-24-hCr"/>
-                            <constraint firstItem="3UF-fh-wpl" firstAttribute="leading" secondItem="T2Q-MZ-0LE" secondAttribute="trailing" constant="8" symbolic="YES" id="r19-IH-p8C"/>
+                            <constraint firstItem="RsP-8p-5r7" firstAttribute="top" secondItem="3UF-fh-wpl" secondAttribute="bottom" id="nJk-X5-UKu"/>
+                            <constraint firstItem="RsP-8p-5r7" firstAttribute="top" secondItem="T2Q-MZ-0LE" secondAttribute="bottom" constant="0.5" id="zpi-jQ-ysu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="댓글달기" id="v1G-hP-2ZI">
