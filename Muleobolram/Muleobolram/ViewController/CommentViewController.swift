@@ -10,7 +10,7 @@ import UIKit
 class CommentViewController: UIViewController{
     
     @IBOutlet weak private var titleTxt : UILabel!
-    @IBOutlet weak private var contentTxt : UITextView!
+    @IBOutlet weak private var contentTxt : UILabel!
     @IBOutlet weak private var tableView : UITableView!
     @IBOutlet weak private var commentTxt : UITextField!
     
@@ -27,6 +27,7 @@ class CommentViewController: UIViewController{
         super.viewDidLoad()
         let nibName = UINib(nibName: "CommentTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
+        tableView.rowHeight = 80
         
         getComment(id: id)
         titleTxt.text! = Title
@@ -92,7 +93,7 @@ class CommentViewController: UIViewController{
                         case 401 :
                             self.errorAlert(title: "당신의 게시물이 아닙니다.", action: nil)
                         case 404 :
-                            print("not found")
+                            self.errorAlert(title: "게시물을 찾을 수 없습니다.", action: nil)
                         default :
                             print(res.response?.statusCode ?? 0)
                         }
@@ -118,7 +119,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
-        cell.name.text = commentModel.comment_join[indexPath.row].name
+        cell.name.text = commentModel.comment_join[indexPath.row].name + ":"
         cell.detail.text = commentModel.comment_join[indexPath.row].content
         
         
