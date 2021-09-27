@@ -9,10 +9,11 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var name : UILabel!
-    @IBOutlet weak var detail : UITextView!
+    @IBOutlet weak var detail : UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        name.adjustsFontSizeToFitWidth = true
         // Initialization code
     }
 
