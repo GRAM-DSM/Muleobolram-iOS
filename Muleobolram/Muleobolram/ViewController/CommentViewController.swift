@@ -29,6 +29,9 @@ class CommentViewController: UIViewController{
         tableView.register(nibName, forCellReuseIdentifier: "commentCell")
         tableView.rowHeight = 80
         
+        commentTxt.font = UIFont(name: "나눔고딕", size: 17)
+        commentTxt.textColor = .black
+        
         getComment(id: id)
         titleTxt.text! = Title
         contentTxt.text! = Content
